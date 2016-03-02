@@ -1,0 +1,363 @@
+@charset "utf8";
+html{
+    font-size: 62.5%;
+}
+body,ul,li,h1,p,h2,input,figure,img,fieldset,h1,table,tr,td{
+    margin:0;
+    padding:0;
+    border:none;
+    list-style: none;
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    /*做项目时要清除浏览器默认样式，比如input默认是有边框的，会影响布局*/
+}
+body{
+    background: #f2f2f2;
+    height:auto;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+#header{
+    width: 100%;
+    height: 121px;
+    background: #ddd;
+    position: fixed;
+    top:0;
+    z-index: 3;
+    opacity: 0.8;
+}
+#header img{
+    display: inline-block;
+    float: left;
+    border-radius: 60px;
+    border: 1px solid #ccc;
+    transition:box-shadow 1s;
+    -webkit-transition:box-shadow 1s;
+}
+#header img:hover{
+    box-shadow: 0 0 10px blue;
+}
+#header_p{
+    display: inline-block;
+    position: absolute;
+    top:30px;
+    left:150px;
+    font-size: 20px;
+    color: black;
+}
+#header_p hr{
+    width:100px;
+    height: 0;
+    border-bottom: 1px solid #bbb;
+}
+#header_p1:hover,#header_p2:hover{
+    cursor: pointer;
+}
+nav ul{
+    position: absolute;
+    top:50px;
+    right: 60px;
+}
+nav ul em{
+    display: block;
+    position: relative;
+    height:0;
+    width:0;
+    left:50px;
+    background:red;
+}
+nav ul li{
+    float: left;
+    font-size: 20px;
+    margin: 0 10px;
+    text-align: center;
+    width: 100px;
+}
+.asidebar{
+    position: fixed;
+    right:1%;
+    top:45%;
+}
+.asidebar ul li{
+    font-size: 30px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+.asidebar ul li a{
+    display: block;
+}
+.asidebar .red{
+    color: red;
+}
+.home{
+    width: 1000px;
+    height:900px;
+    position: relative;
+    margin: 0 auto;
+}
+.home img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    position: absolute;
+    left: 40%;
+    top:160px;
+    cursor: pointer;
+}
+.word{
+    position: absolute;
+    top:420px;
+    left:22%;
+    font-size: 30px;
+    text-shadow:5px 5px 2px red;
+    color: black;
+}
+.info{
+    position: absolute;
+    top:520px;
+    left:32%;
+    font-size: 25px;
+}
+.info p{
+    margin: 15px 0;
+    color: black;
+}
+.about{
+    margin: 0 auto;
+    height:900px;
+    width: 1000px;
+    position: relative;
+}
+.title{
+    position: relative;
+    top:200px;
+    width:200px;
+    margin: 0 auto;
+    color: black;
+}
+.title h1{
+    text-align: center;
+    font-size: 30px;
+}
+.title span{
+    font-size: 20px;
+    color: red;
+}
+.title hr{
+    height:0;
+    border: 1px solid red;
+}
+.about_info{
+    position: relative;
+    top:280px;
+    width: 250px;
+    float: left;
+    color: black;
+}
+.about_info .age{
+    font-size: 25px;
+    position: relative;
+    top:10px;
+    right:30px;
+}
+.about_info hr{
+    width: 80px;
+    height: 0;
+    border: 1px solid #999;
+    transform:rotate(-45deg);
+}
+.about_info  .age_num{
+    font-size: 20px;
+    position: relative;
+    left:30px;
+    bottom: 10px;
+}
+.about p{
+    position:relative;
+    top:320px;
+    left:20px;
+    font-size: 20px;
+    margin: 30px 0;
+    text-align: center;
+    color: black;
+}
+.skill{
+    margin: 0 auto;
+    height:900px;
+    width: 1000px;
+    position: relative;
+}
+.skill p{
+    width: 1000px;
+    position: relative;
+    right: 400px;
+    top:50px;
+    font-size: 20px;
+    margin: 0 auto;
+    font-weight:200;
+}
+.skill figure{
+    display: inline-block;
+    position: relative;
+    top:280px;
+    margin:0 100px;
+    text-align: center;
+    color: black;
+    height: 160px;
+}
+.skill figure:hover{
+    background: #999;
+}
+.skill figure img{
+    padding:10px 0 0 10px;
+}
+.skill figure span{
+    font-size: 12px;
+    position: relative;
+    bottom: 35px;
+}
+.skill figcaption{
+    font-size: 20px;
+}
+.skill .htmlinfo,.skill .cssinfo,.skill .jsinfo{
+    position:absolute;
+    background: #5686D6;
+    width: 300px;
+    padding: 20px 0 20px 60px;
+    border-radius: 20px;
+}
+.skill ul li{
+    list-style:disc;
+    text-align: left;
+    font-size:18px; 
+}
+.skill .htmlinfo{
+    top:630px;
+}
+.skill .cssinfo{
+    top:630px;
+    left:320px;
+}
+.skill .jsinfo{
+    top:630px;
+    left: 650px;
+}
+.work{
+    margin: 0 auto;
+    height:900px;
+    width: 1000px;
+    position: relative;
+}
+.work .left,.work .right{
+    position:relative;
+    z-index: 9999;
+    opacity: 0.2;
+    filter:alpha(opacity=20);
+    transition:opacity 1s;
+}
+.work .left{
+    bottom:170px;
+    right: 220px;
+}
+.work .right{
+    bottom:170px;
+    left: 220px;
+}
+.work .left:hover,.work .right:hover{
+    opacity:1;
+    filter:alpha(opacity=20);
+}
+.work .lunbo{
+    position:relative;
+    width: 600px;
+    height: 300px;
+    top:300px;
+    left:200px;
+    overflow: hidden;
+    color: black;
+}
+.work .view{
+    width:1800px;
+    position:relative;
+}
+.work .carousel{
+    width: 598px;
+    border:1px solid #ccc;
+    height: 298px;
+    display: inline-block;
+    float: left;
+    background: #ccc;
+}
+.work .carousel dl{
+    text-indent: 50px;
+    font-size: 20px;
+    list-style:circle;
+}
+.work .carousel dl p{
+    font-size: 12px;
+    padding: 10px 0 10px 30px;
+}
+.work .carousel dl dt{
+    text-indent: 80px;
+    padding: 10px 0 0 0 ;
+}
+.work .carousel dl dd{
+    padding: 10px 0;
+    text-align: left;
+}
+.contact{
+    margin: 0 auto;
+    height:900px;
+    width: 1000px;
+    position: relative;
+    color: black;
+}
+.contact p{
+    position: relative;
+    top:220px;
+    font-size: 30px;
+    text-align: center;
+    margin: 10px 0;
+}
+.contact p span{
+    color: red;
+}
+.contact p b{
+    color: blue;
+    font-weight: 100;
+}
+.contact p em{
+    font-style: normal;
+    color: green;
+}
+#fontcolor{
+    text-indent: 50px;
+    padding: 80px 0 0 0;
+    font-weight: 100;
+}
+.footer{
+    position:relative;
+    bottom:200px;
+    height: 99px;
+    width: 100%;
+    border-top: 1px solid #bbb;
+}
+.footer p{
+    text-align: center;
+    font-size: 14px;
+    height: 33px;
+    line-height: 33px;
+    color: #999;
+}
+.footer p a{
+    color: #999;
+}
+.footer b{
+    color: blue;
+    font-weight: 100;
+}
+.display{
+    display: none;
+}
+
