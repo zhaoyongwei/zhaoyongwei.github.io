@@ -56,7 +56,6 @@ a{
 }
 nav ul{
     position: absolute;
-    top:50px;
     right: 60px;
 }
 nav ul em{
@@ -72,7 +71,19 @@ nav ul li{
     font-size: 20px;
     margin: 0 10px;
     text-align: center;
+    line-height: 120px;
     width: 100px;
+    height: 120px;
+}
+nav ul li:first-child{
+    transition:transform 1s;
+    -webkit-transition:transform 1s;
+    -ms-transition:transform 1s;
+}
+nav ul li:first-child:hover{
+    transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
 }
 .asidebar{
     position: fixed;
@@ -92,7 +103,7 @@ nav ul li{
 }
 .home{
     width: 1000px;
-    height:900px;
+    height:100%;
     position: relative;
     margin: 0 auto;
 }
@@ -107,17 +118,31 @@ nav ul li{
 }
 .word{
     position: absolute;
-    top:420px;
-    left:22%;
-    font-size: 30px;
+    width: 500px;
+    top:400px;
+    left:250px;
+    font-size: 25px;
     text-shadow:5px 5px 2px red;
     color: black;
+    animation:mysecond 4s linear;
+    -webkit-animation:mysecond 4s linear;
+}
+@keyframes mysecond{
+    0%{left:50px;}
+    50%{left:450px;}
+    100%{left:250px;}
+}
+@-webkit-keyframes mysecond{
+    0%{left:50px;}
+    50%{left:450px;}
+    100%{left:250px;}
 }
 .info{
     position: absolute;
-    top:520px;
-    left:32%;
-    font-size: 25px;
+    width: 500px;
+    top:470px;
+    left:250px;
+    font-size: 20px;
 }
 .info p{
     margin: 15px 0;
@@ -125,31 +150,51 @@ nav ul li{
 }
 .about{
     margin: 0 auto;
-    height:900px;
+    height:100%;
     width: 1000px;
     position: relative;
 }
+@keyframes myfirst{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@-webkit-keyframes myfirst{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
 .title{
-    position: relative;
-    top:200px;
+    position:absolute;
+    top:150px;
     width:200px;
-    margin: 0 auto;
+    left: 400px;
     color: black;
+    
 }
 .title h1{
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
+    animation:myfirst 5s;
+    -webkit-animation:myfirst 5s;
+    transition:transform 1s;
+    -webkit-transition:transform 1s;
+}
+.title h1:hover{
+    transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    cursor: pointer;
 }
 .title span{
     font-size: 20px;
     color: red;
+    position: relative;
+    bottom: 30px;
 }
 .title hr{
     height:0;
     border: 1px solid red;
 }
 .about_info{
-    position: relative;
+    position:relative;
     top:280px;
     width: 250px;
     float: left;
@@ -166,6 +211,7 @@ nav ul li{
     height: 0;
     border: 1px solid #999;
     transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);    
 }
 .about_info  .age_num{
     font-size: 20px;
@@ -184,17 +230,19 @@ nav ul li{
 }
 .skill{
     margin: 0 auto;
-    height:900px;
+    height:100%;
     width: 1000px;
-    position: relative;
+    position: relative;    
 }
 .skill p{
-    width: 1000px;
-    position: relative;
-    right: 400px;
-    top:50px;
+    width:800px;
+    text-align:left;
+    position:relative;
+    left: 100px;
+    top:280px;
+    text-indent: 20px;
+    line-height: 40px;
     font-size: 20px;
-    margin: 0 auto;
     font-weight:200;
 }
 .skill figure{
@@ -230,7 +278,7 @@ nav ul li{
 .skill ul li{
     list-style:disc;
     text-align: left;
-    font-size:18px; 
+    font-size:16px; 
 }
 .skill .htmlinfo{
     top:630px;
@@ -245,7 +293,7 @@ nav ul li{
 }
 .work{
     margin: 0 auto;
-    height:900px;
+    height:100%;
     width: 1000px;
     position: relative;
 }
@@ -255,6 +303,7 @@ nav ul li{
     opacity: 0.2;
     filter:alpha(opacity=20);
     transition:opacity 1s;
+    -webkit-transition:opacity 1s;
 }
 .work .left{
     bottom:170px;
@@ -296,10 +345,11 @@ nav ul li{
 }
 .work .carousel dl p{
     font-size: 12px;
-    padding: 10px 0 10px 30px;
+    padding: 10px 0 10px 0;
 }
 .work .carousel dl dt{
-    text-indent: 80px;
+    color:#b21212;
+    text-indent: 20px;
     padding: 10px 0 0 0 ;
 }
 .work .carousel dl dd{
@@ -308,14 +358,17 @@ nav ul li{
 }
 .contact{
     margin: 0 auto;
-    height:900px;
+    height:100%;
     width: 1000px;
     position: relative;
     color: black;
 }
+.contact .title{
+    top:250px;
+}
 .contact p{
     position: relative;
-    top:220px;
+    top:380px;
     font-size: 30px;
     text-align: center;
     margin: 10px 0;
@@ -337,9 +390,7 @@ nav ul li{
     font-weight: 100;
 }
 .footer{
-    position:relative;
-    bottom:200px;
-    height: 99px;
+    height: 200px;
     width: 100%;
     border-top: 1px solid #bbb;
 }
