@@ -66,14 +66,14 @@ $(document).ready(function(){
         index--;
         if(index<=-1||index>=2){index=0}
         $(".work .view").animate({
-        right:600*index+"px"
+        right:700*index+"px"
      },200)
       })
       $(".right").click(function(){        
         index++;
         if(index>=3||index<=-1){index=2}
         $(".work .view").animate({
-        right:600*index+"px"
+        right:700*index+"px"
      },200)
       })
      
