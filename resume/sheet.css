@@ -298,27 +298,26 @@ nav ul li:first-child:hover{
     position: relative;
 }
 .work .left,.work .right{
-    position:relative;
+    position:absolute;
     z-index: 9999;
     opacity: 0.2;
+    top:130px;
     filter:alpha(opacity=20);
     transition:opacity 1s;
     -webkit-transition:opacity 1s;
 }
 .work .left{
-    bottom:170px;
-    right: 270px;
+    right: 620px;
 }
 .work .right{
-    bottom:170px;
-    left: 270px;
+    left: 620px;
 }
 .work .left:hover,.work .right:hover{
     opacity:1;
     filter:alpha(opacity=20);
 }
 .work .lunbo{
-    position:relative;
+    position:absolute;
     width: 700px;
     height: 300px;
     top:300px;
@@ -327,16 +326,32 @@ nav ul li:first-child:hover{
     color: black;
 }
 .work .view{
-    width:2100px;
+    height: 300px;
+    width: 2100px;
+    background: red;
     position:relative;
 }
 .work .carousel{
-    width: 698px;
-    border:1px solid #ccc;
-    height: 298px;
+    width: 700px;
+    height:300px;
+    border-radius: 20px;
     display: inline-block;
     float: left;
-    background: #ccc;
+}
+.work .carousel.one{
+    background:-webkit-linear-gradient(left top,#f0f2ff,#fcdcdc,#e0ffff);
+    background:-moz-linear-gradient(bottom right,#f0f2ff,#fcdcdc,#e0ffff);
+    background:linear-gradient(to bottom right,#f0f2ff,#fcdcdc,#e0ffff);
+}
+.work .carousel.two{
+    background:-webkit-linear-gradient(#ffe4c4,#dcdcdc,#f0fff0);
+    background:-moz-linear-gradient(#ffe4c4,#dcdcdc,#f0fff0);
+    background:linear-gradient(#ffe4c4,#dcdcdc,#f0fff0);
+}
+.work .carousel.three{
+    background:-webkit-linear-gradient(left top,#fff0f5,#fafad2,#ffffe0);
+    background:-moz-linear-gradient(bottom right,#fff0f5,#fafad2,#ffffe0);
+    background:linear-gradient(to bottom right,#fff0f5,#faf8d2,#fff2e0);
 }
 .work .carousel dl{
     text-indent: 50px;
@@ -353,7 +368,7 @@ nav ul li:first-child:hover{
     padding: 10px 0 0 0 ;
 }
 .work .carousel dl dd{
-    padding: 10px 0;
+    padding: 5px 0;
     text-align: left;
 }
 .contact{
