@@ -307,11 +307,11 @@ nav ul li:first-child:hover{
 }
 .work .left{
     bottom:170px;
-    right: 220px;
+    right: 270px;
 }
 .work .right{
     bottom:170px;
-    left: 220px;
+    left: 270px;
 }
 .work .left:hover,.work .right:hover{
     opacity:1;
@@ -319,7 +319,7 @@ nav ul li:first-child:hover{
 }
 .work .lunbo{
     position:relative;
-    width: 600px;
+    width: 700px;
     height: 300px;
     top:300px;
     left:200px;
@@ -327,11 +327,11 @@ nav ul li:first-child:hover{
     color: black;
 }
 .work .view{
-    width:1800px;
+    width:2100px;
     position:relative;
 }
 .work .carousel{
-    width: 598px;
+    width: 698px;
     border:1px solid #ccc;
     height: 298px;
     display: inline-block;
