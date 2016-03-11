@@ -5,12 +5,12 @@ $a=array("人","人生","Anna","Brittany","Cinderella","Diana","Eva","Fiona","Gu
 $q=$_GET["qqq"];//以get方式得到传来的数据，qqq为"ajaxdemo.php?qqq+str"中传来的值.
 if (strlen($q)>0)
   {
-    $data="";
+    $data=null;
   for($i=0;$i<count($a);$i++)
     {
     if (strtolower($q)==strtolower(substr($a[$i],0,strlen($q))))//判断值是否和数据库中数据匹配，匹配的话就获取该数据
       {
-      if ($data=="")
+      if ($data==null)
         {
         $data=$a[$i];
         }
