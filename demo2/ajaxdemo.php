@@ -6,7 +6,7 @@ $q=$_GET["qqq"];//以get方式得到传来的数据，qqq为"ajaxdemo.php?qqq+st
 if (strlen($q)>0)
   {
     $data="";
-  for($i=0;$i<count($a);$i++)
+  for($i=0;$i<sizeof($a);$i++)
     {
     if (strtolower($q)==strtolower(substr($a[$i],0,strlen($q))))//判断值是否和数据库中数据匹配，匹配的话就获取该数据
       {
@@ -30,7 +30,7 @@ else
   $response=$data;
   }
 $str = explode(",",$response);
-$length=count($str);
+$length=sizeof($str);
 for($j=0;$j<$length;$j++){
 echo <<< ETO
     <p onclick="get$j()">$str[$j]</p>
