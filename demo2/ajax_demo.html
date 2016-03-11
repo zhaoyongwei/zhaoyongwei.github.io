@@ -25,7 +25,7 @@ xmlhttp.onreadystatechange=function()
     document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
     }
   }
-xmlhttp.open("GET","/try/ajax/gethint.php?q="+str,true);
+xmlhttp.open("GET","ajax_demo.php?q="+str,true);
 xmlhttp.send();
 }
 </script>
