@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head> 
+	<meta charset="UTF-8">
+	<title>项目实战---PC端固定布局</title>
+	<link rel="stylesheet" href="style/main.css" />
+	<link rel="icon" href="images/ico.png" />
+	<script type="text/javascript" src="jquery.js"></script>
+
+    <style>
+     .important{
+     	color:red;
+     }
+    #view{
+        perspective:500px; /* 3D视角*/
+        -ms-perspective:500px;
+        -moz-perspective:500px;
+        -webkit-perspective:500px;
+        width:50px;
+        height:50px;
+        position: absolute;
+        left:480px;
+        top:10px;
+        z-index: 9999;
+     }
+  @keyframes scroll{
+    100%{
+    transform:rotate3d(1,1,1,360deg);
+    }
+ }
+ @-webkit-keyframes scroll{
+    100%{
+    -webkit-transform:rotate3d(1,1,1,360deg);
+    }
+ }
+  @-moz-keyframes scroll{
+    100%{
+    -moz-transform:rotate3d(1,1,1,360deg);
+    }
+ }
+   @-ms-keyframes scroll{
+    100%{
+    -ms-transform:rotate3d(1,1,1,360deg);
+    }
+ }
+ #cube{
+    width:50px;
+    height:50px;
+    position:relative;
+    animation:scroll 2s linear 7s infinite;
+    -webkit-animation:scroll 2s linear 7s infinite;
+    -moz-animation:scroll 2s linear 7s infinite;
+    -ms-animation:scroll 2s linear 7s infinite;
+    transform-style:preserve-3d;
+    -ms-transform-style:-ms-preserve-3d;
+    -webkit-transform-style:-webkit-preserve-3d;
+    -moz-transform-style:-moz-preserve-3d;
+ }
+ .item{
+    width:50px;
+    height:50px;
+    border:1px solid black;
+    background:yellow;
+    text-align:center;
+    font-size:25px;
+    line-height: 50px;
+    opacity:0.5;
+    position:absolute;
+ }
+ #page1{
+    z-index:6;
+    transform-origin:left;
+    animation:demo 1s linear 1s both;    
+    -webkit-transform-origin:left;
+    -webkit-animation:demo 1s linear 1s both;
+    -moz-transform-origin:left;
+    -moz-animation:demo 1s linear 1s both;
+    -ms-transform-origin:left;
+    -ms-animation:demo 1s linear 1s both;
+ }
+  @keyframes demo{
+    100%{
+    transform:rotateY(-90deg);
+    }
+ }
+ @-webkit-keyframes demo{
+    100%{
+    -webkit-transform:rotateY(-90deg);
+    }
+ }
+  @-moz-keyframes demo{
+    100%{
+    -moz-transform:rotateY(-90deg);
+    }
+ }
+   @-ms-keyframes demo{
+    100%{
+    -ms-transform:rotateY(-90deg);
+    }
+ }
+ #page2{
+    z-index:5;
+    transform-origin:right;
+    animation:demo1 1s linear 2s both;
+    -webkit-transform-origin:right;
+    -webkit-animation:demo1 1s linear 2s both;
+    -moz-transform-origin:right;
+    -moz-animation:demo1 1s linear 2s both;
+    -ms-transform-origin:right;
+    -ms-animation:demo1 1s linear 2s both;
+ }
+@keyframes demo1{
+    100%{
+    transform:rotateY(90deg);
+    }
+ }
+ @-webkit-keyframes demo1{
+    100%{
+    -webkit-transform:rotateY(90deg);
+    }
+ }
+@-moz-keyframes demo1{
+    100%{
+    -moz-transform:rotateY(90deg);
+    }
+ }
+ @-ms-keyframes demo1{
+    100%{
+    -ms-transform:rotateY(90deg);
+    }
+ }
+ #page3{
+        z-index:4;
+        animation:demo2 1s linear 3s both;
+        -webkit-animation:demo2 1s linear 3s both;
+        -moz-animation:demo2 1s linear 3s both;
+        -ms-animation:demo2 1s linear 3s both;
+ }
+  @keyframes demo2{
+    100%{
+    transform-origin:top;
+    transform:rotateX(90deg);
+    }
+ }
+ @-webkit-keyframes demo2{
+    100%{
+    -webkit-transform-origin:top;
+    -webkit-transform:rotateX(90deg);
+    }
+ }
+  @-moz-keyframes demo2{
+    100%{
+    -moz-transform-origin:top;
+    -moz-transform:rotateX(90deg);
+    }
+ }
+   @-ms-keyframes demo2{
+    100%{
+    -ms-transform-origin:top;
+    -ms-transform:rotateX(90deg);
+    }
+ }
+ #page4{
+    z-index:3;
+    animation:demo3 1s linear 4s both;
+    -webkit-animation:demo3 1s linear 4s both;
+    -moz-animation:demo3 1s linear 4s both;
+    -ms-animation:demo3 1s linear 4s both;
+ }
+@keyframes demo3{
+    100%{
+    transform-origin:bottom;
+    transform:rotateX(-90deg);
+    }
+ }
+ @-webkit-keyframes demo3{
+    100%{
+    -webkit-transform-origin:bottom;
+    -webkit-transform:rotateX(-90deg);
+    }
+ }
+  @-moz-keyframes demo3{
+    100%{
+    -moz-transform-origin:bottom;
+    -moz-transform:rotateX(-90deg);
+    }
+ }
+   @-ms-keyframes demo3{
+    100%{
+    -ms-transform-origin:bottom;
+    -ms-transform:rotateX(-90deg);
+    }
+ }
+ #page5{
+    z-index:2;
+    animation:demo4 1s linear 5s both;
+    -webkit-animation:demo4 1s linear 5s both;
+    -moz-animation:demo4 1s linear 5s both;
+    -ms-animation:demo4 1s linear 5s both;
+ }
+@keyframes demo4{
+    100%{
+    transform:translateZ(50px);
+    }
+ }
+ @-webkit-keyframes demo4{
+    100%{
+    -webkit-transform:translateZ(50px);
+    }
+ }
+  @-moz-keyframes demo4{
+    100%{
+    -moz-transform:translateZ(50px);
+    }
+ }
+   @-ms-keyframes demo4{
+    100%{
+    -ms-transform:translateZ(50px);
+    }
+ }
+ #page6{
+    z-index:1;
+    animation:demo5 1s linear 6s both;
+    -webkit-animation:demo5 1s linear 6s both;
+    -moz-animation:demo5 1s linear 6s both;
+    -ms-animation:demo5 1s linear 6s both;
+ }
+  @keyframes demo5{
+    100%{
+    transform:rotateY(180deg);
+    }
+ }
+ @-webkit-keyframes demo5{
+    100%{
+    -webkit-transform:rotateY(180deg);
+    }
+ }
+  @-moz-keyframes demo5{
+    100%{
+    -moz-transform:rotateY(180deg);
+    }
+ }
+   @-ms-keyframes demo5{
+    100%{
+    -ms-transform:rotateY(180deg);
+    }
+ }      
+</style>
+</head>
+<body>
+	<!-- <p id="pp" style="position:absolute;font-size: 20px;color:white;"></p> -->
+	<iframe width="420" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&color=%23FFFFFF&icon=1&py=beijing&num=5"></iframe>
+
+		<div id="view">
+		<div id="cube">
+		<div class="item" id="page1">1</div>
+		<div class="item" id="page2">2</div>
+		<div class="item" id="page3">3</div>
+		<div class="item" id="page4">4</div>
+		<div class="item" id="page5">5</div>
+		<div class="item" id="page6">6</div>
+		</div>
+		</div>
+
+	<div class="back"><a href="#"><img src="images/back.png"></a></div>	
+
+	<nav id="nav">
+		<section class="nav-sec">
+			<ul class="link">
+				<li class="select"><a href="index.html">首页</a><em></em></li>
+				<li><a href="tourinfo.html">旅行资讯</a><em></em></li>
+				<li><a href="tickets.html">机票订购</a><em></em></li>
+				<li><a href="###">个人信息<span></span><em></em></a>
+                    <ul>
+                    	<li>姓名：赵永卫</li>
+                    	<li>性别：男</li>
+                    	<li>学历：本科</li> 
+                    	<li>工作时间：两年</li>                    	                   	 
+                    	<li>兴趣爱好：HTML5，WEB前端</li>
+                    	<li>自学过：Javascript,PHP</li> 
+                    	<li>定位：web前端工程师</li>      
+                    </ul>
+				</li>								
+				<li><a href="scenery.html">风景轮播</a><em></em></li>
+				<li><a href="about.html">联系我们</a><em></em></li>
+				<li><a href="register.html">注册/登录</a><em></em></li>
+			</ul>
+		</section>
+	</nav>
+
+<!-- 	<div id="ggao">
+     <ul>
+     	<li>热爱前端开发</li>
+     	<li>精通DIV+CSS布局</li>
+     	<li>熟悉Bootstrap框架</li>
+     	<li>熟悉PHP后端语言</li>
+     	<li>熟悉Javascript，Jquery</li>
+     	<li>自己完成了几个网站项目</li>
+     	<li>定位为WEB前端工程师</li>
+     	<li class="getmore"><a href="about.html">了解更多.....</a></li>
+     	<li id="close"><a href="javascript:void()" onclick="document.getElementById('ggao').style.visibility='hidden'"><span>☒</span>关闭悬浮广告</a></li>
+     </ul>
+	</div> -->
+	<script type="text/javascript">
+    $(function(){$(document).scroll(function(){$("#ggao").css("top",$(document).scrollTop())})});
+    // $(function(){$(document).scroll(function(){$("#www").css("font-size",$(document).scrollTop())})})
+	</script>	
+<div id="main">
+	<a href="javascript:;" class="left"><</a>
+	<ol>
+		<li style="display:block;"><img src="images/bg1.jpg" alt="心之所向，无所阻挡"></li>
+		<li><img src="images/bg3.jpg" alt="美丽的大自然"></li>
+		<li><img src="images/bg2.jpg" alt="让人神往的精神殿堂"></li>
+		<li><img src="images/bg4.jpg" alt="世界之大，发现美的眼睛却很少"></li>
+	</ol>
+	<ul>
+		<li class="red">●</li>
+		<li>●</li>
+		<li>●</li>
+		<li>●</li>
+	</ul>	
+		<a href="javascript:;" class="right">></a>
+	<div style="display:none;">
+		<span></span>
+		<strong>轮播器</strong>	
+		<div class="text">
+			<input type="text" class="text1" placeholder="请输入旅游景点或城市">
+		</div>
+		<div class="sou">
+			<a href="###"><b>搜索</b></a>
+		</div>
+	</div>	
+</div>
+<div id="tour">
+	<h1>热门旅游</h1>
+	<p>国内旅游，国外旅游，自助旅游，自驾旅游，游轮签证，主题旅游等各种最新热门旅游推荐</p>
+  <figure class="img">
+    <figcaption>      
+		<a href="###"><img src="images/1.jpg"/><a>
+		<p>&lt;<strong>北京6日游</strong>&gt; 包团优惠，价格公道，无自费，让您享受六日的轻松游玩.</p>
+		<em>满意度：96%</em>
+		<span>¥4000起</span>
+    <div class="type">国内长线<div>      
+    </figcaption>
+  </figure>
+
+    <figure class="img" >
+        <figcaption>         
+		<a href="###"><img src="images/2.jpg"/><a>			
+		<p>&lt;<strong>海南双飞5日游</strong>&gt;零自费，全程四星级酒店，给您一个舒适的二人世界</p>
+		<em>满意度：91%</em>
+		<span>¥4890起</span>
+    <div class="type">自助旅游<div>       
+    </figcaption>
+  </figure>
+<figure class="img">
+        <figcaption>
+		<a href="###"><img src="images/3.jpg"/><a>
+		<p>&lt;<strong>北京6日游</strong>&gt;
+			早餐+晚餐，景区任你玩，让您享受六日的轻松游玩.</p>
+		<em>满意度：96%</em>
+		<span>¥6600起</span>
+    <div class="type">国内长线<div>
+    </figcaption>        
+  </figure>
+  <figure class="img">
+	<figcaption>			
+		<a href="###"><img src="images/4.jpg"/><a>
+		<p>&lt;<strong>马尔代夫3日游</strong>&gt;免费体验当地的风土人情，爽快体验人间仙境，让您享受六日的轻松游玩.</p>
+		<em>满意度：99%</em>
+		<span>¥8990起</span>
+    <div class="type">国外长线<div>
+    </figcaption>
+  </figure>
+  <figure class="img">
+	<figcaption>			
+		<a href="###"><img src="images/5.jpg"/><a>		
+			<p>&lt;<strong>富士山3日游</strong>&gt;富士山的雪带给你无尽瞎想，让您享受六日的轻松游玩.</p>
+		<em>满意度：89%</em>
+		<span>¥2450起</span>
+    <div class="type">国外短线<div>
+    </figcaption>
+  </figure>
+  <figure class="img">
+	<figcaption>			
+		<a href="###"><img src="images/6.jpg"/><a>
+		<p>&lt;<strong>朝鲜2日游</strong>&gt;来体验初级社会主义国家的生活，氢弹爆炸让人担心的国家</p>
+		<em>满意度：96%</em>
+		<span>¥4000起</span>
+    <div class="type">国内长线<div>
+    </figcaption>
+  </figure>
+  <figure class="img">
+	<figcaption>			
+		<a href="###"><img src="images/7.jpg"/><a>
+		<p>&lt;<strong>香格里拉5日游</strong>&gt;来欣赏全球最美的婚纱拍摄区，让您享受六日的轻松游玩.</p>
+		<em>满意度：96%</em>
+		<span>¥4000起</span>
+    <div class="type">国内长线<div>
+    </figcaption>
+  </figure>
+  <figure class="img">
+	<figcaption>			
+		<a href="###"><img src="images/8.jpg"/><a>
+		<p>&lt;<strong>西湖6日游</strong>&gt;全程美女导游陪伴，杭州西湖雷锋塔欢迎你，让您享受六日的轻松游玩.</p>
+		<em>满意度：96%</em>
+		<span>¥4000起</span>
+    <div class="type">国内短线<div>
+    </figcaption>
+  </figure>
+  <figure class="img">
+	       <figcaption>			
+		<a href="###"><img src="images/9.jpg"/><a>
+		<p>&lt;<strong>美国一周游</strong>&gt;拉斯维加斯赌场，洛杉矶繁华街道，华盛顿经济区，任你参观</p>
+		<em>满意度：99%</em>
+		<span>¥4000起</span>
+    <div class="type">国外长线<div>
+    </figcaption>
+  </figure>
+</div>
+<div class="clear" style="clear:both"></div>
+<footer id="footer">
+	<div id="top">
+		<div class="block">
+        <h1>合作伙伴</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">途牛旅游网</a></li>
+			<li><a href="###">驴妈妈旅游网</a></li>
+			<li><a href="###">携程旅游</a></li>
+			<li><a href="###">中国青年旅行社</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>旅游FAQ</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">旅游合作签订方式？</a></li>
+			<li><a href="###">儿童价是基于什么制定的？</a></li>
+			<li><a href="###">旅游的线路品质怎么界定的？</a></li>
+			<li><a href="###">单房差是什么？</a></li>
+			<li><a href="###">旅游保险有哪些种类？</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>联系方式</h1>
+		<hr/>
+		<ul>
+			<li>微博：sonnylight@weibo.com</li>
+			<li>邮件：zhaoyongwei@zeny-express.com</li>
+			<li>地址：北京市朝阳区北京广播大厦</li>
+		</ul>
+		</div>
+	</div>
+	<div id="bottom">
+		<p>Copyright © <span>赵永卫</span> 国际旅行社|京ICP 备120150812 号|旅行社经营许可证：L YC BK12345</p>
+	</div>
+</footer>
+</body>
+<script>
+//轮播器初始化(复杂一点的)
+     // $("#main img").css("display","none");//所有图片隐藏
+     // $("#main img").eq(0).css("display","block");//显示第一张
+     // $("#main ul li").eq(0).css("color","red");//设置第一个按钮的样式为选中状态
+     // $("#main strong").html($("#main img").eq(0).attr('alt'));//把图片中的alt属性显示出来
+        // // clearInterval(auto);//鼠标悬停时清除定时器
+        // // $("#main img").css("display","none");//所有图片隐藏
+        // $("#main ul li").show();
+        // $("#main img").eq($("#main ul li").index(this)).css("display","block");//指定和悬浮的li的索引号相同的img显示
+        // $("#main ul li").css("color","black");//移除所有的悬浮样式
+        // $("#main ul li").eq($("#main ul li").index(this)).css("color","red");//仅为悬浮在该按钮下添加样式
+        // $("#main strong").html($("#main img").eq($("#main ul li").index(this)).attr('alt'));
+// $("#main").hover(function(){
+// 	      clearInterval(auto);
+// },function(){
+// 	    auto=setInterval(start,3000);
+// })
+       //  if(times>=$("#main img").length){times=0;} //判断计数器，如果为3，重新开始计数
+       // $("#main img").css("display","none");
+       // $("#main img").eq(times).css("display","block");
+       // $("#main ul li").css("color","black");
+       // $("#main ul li").eq(times).css("color","red");
+       // $("#main strong").html($("#main img").eq(times).attr('alt'));
+      //  times++;  
+
+// 轮播器
+$(document).ready(function(){
+	 var n=0;//设置计数器
+     var auto;//设置定时器
+//手动轮播器
+	function fn(n){
+		$("#main ul li").removeClass("red");
+     	$("#main ul li").eq(n).addClass("red");
+     	$("#main ol li").hide();
+     	$("#main ol li").eq(n).show();
+	} //变化时发生的事件
+
+     $("#main ul li").mouseover(function(){//当鼠标悬停时发生事件
+     	n=$(this).index();//
+        // console.log(n);
+     	fn(n);
+     });
+//自动轮播器   
+     function start(){ //定时器代码
+     	n++;
+     	if(n>=$("#main ol li").length){
+     		n=0;
+     	}
+     	fn(n);
+     }   
+     auto=setInterval(start,2000);
+     $("#main").hover(function(){
+     	clearInterval(auto);
+     	$("#main .right").css("display","block");
+     	$("#main .left").css("display","block");
+     },function(){
+     	auto=setInterval(start,2000);
+     	$("#main .right").css("display","none");
+     	$("#main .left").css("display","none");
+     })
+     // 点击切换下一张
+     $("#main .right").click(function(){
+     	start();
+     });
+     $("#main .left").click(function(){
+     	n--;
+     	if(n<=-1){
+     		n=$("#main ol li").length-1;
+     	}
+     	fn(n);
+     })
+});
+
+  //显示和隐藏返回按钮
+  $(document).ready(function(){
+    $(document).scroll(function(){       
+    if($(document).scrollTop()<100){
+       $(".back").hide(); 
+    }
+    else{
+       $(".back").show();  
+    }        
+    })
+
+    $("#nav .nav-sec .link>li").hover(function(){
+        $("em",this).css("height","1px");
+        $("em",this).animate({
+            width:"110px",
+            left:0,            
+            right:0
+        },500)
+    },function(){
+         $("em",this).stop().animate({
+            left:"55px",
+            width:0
+         },500)
+    })
+})
+</script>
+</html>

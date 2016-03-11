@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+	<meta charset="UTF-8">
+	<title>项目实战---PC端固定布局</title>
+	<link rel="stylesheet" href="style/basic.css">
+	<link rel="stylesheet" href="style/tourinfo.css">
+	<script type="text/javascript" src="jquery.js"></script>	
+	<link rel="icon" href="images/ico.png">
+</head>
+<body>
+    <div class="back"><a href="#"><img src="images/back.png"></a></div>
+    <script>
+   $(document).ready(function(){
+    $(document).scroll(function(){       
+    if($(document).scrollTop()<100){
+       $(".back").hide();
+    }
+    else{
+       $(".back").show();  
+    }        
+    })
+    $("#nav .nav-sec .link>li").hover(function(){
+        $("em",this).css("height","1px");
+        $("em",this).animate({
+            width:"110px",
+            left:0,            
+            right:0
+        },500)
+    },function(){
+         $("em",this).stop().animate({
+            left:"55px",
+            width:0
+         },500)
+    })
+    $(".tit_p1").click(function(){
+	      $(".p1").slideToggle(function(){
+	        if($(this).is(":hidden")){
+	         $(".tit_p1").text("+");
+	        }
+	        else{
+	         $(".tit_p1").text("－"); 
+	        }        
+	      });     
+	    });
+    $(".tit_p2").click(function(){
+	      $(".p2").slideToggle(function(){
+	        if($(this).is(":hidden")){
+	         $(".tit_p2").text("+");
+	        }
+	        else{
+	         $(".tit_p2").text("－"); 
+	        }        
+	      });     
+	    });
+    $(".tit_p3").click(function(){
+	      $(".p3").slideToggle(function(){
+	        if($(this).is(":hidden")){
+	         $(".tit_p3").text("+");
+	        }
+	        else{
+	         $(".tit_p3").text("－"); 
+	        }        
+	      });     
+	    });
+
+})
+    </script> 
+	<iframe width="420" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&color=%23FFFFFF&icon=1&py=beijing&num=5"></iframe>
+     
+	<nav id="nav">
+		<section class="nav-sec">
+			<ul class="link">
+				<li><a href="index.html">首页</a><em></em></li>
+				<li><a href="tourinfo.html">旅行资讯</a><em></em></li>
+				<li><a href="tickets.html">机票订购</a><em></em></li>
+				<li><a href="###">个人信息<span></span><em></em></a>
+                    <ul>
+                    	<li>姓名：赵永卫</li>
+                    	<li>性别：男</li>
+                    	<li>学历：本科</li> 
+                    	<li>工作时间：两年</li>                   	                   	 
+                    	<li>兴趣爱好：HTML5，WEB前端</li>
+                    	<li>自学过：Javascript,PHP</li> 
+                    	<li>定位：web前端工程师</li>      
+                    </ul>
+				</li>					
+				<li><a href="scenery.html">风景轮播</a><em></em></li>
+				<li class="select"><a href="about.html">联系我们</a><em></em></li>
+				<li><a href="register.html">注册/登录</a><em></em></li>
+			</ul>
+		</section>
+	</nav>
+<!-- 	<div id="ggao">
+     <ul>
+     	<li>热爱前端开发</li>
+     	<li>精通DIV+CSS布局</li>
+     	<li>熟悉Bootstrap框架</li>
+     	<li>熟悉PHP后端语言</li>
+     	<li>熟悉Javascript，Jquery</li>
+     	<li>自己完成了几个网站项目</li>
+     	<li>定位为WEB前端工程师</li>
+     	<li class="getmore"><a href="about.html">了解更多.....</a></li>
+     	<li id="close"><a href="javascript:void()" onclick="document.getElementById('ggao').style.visibility='hidden'"><span>☒</span>关闭悬浮广告</a></li>
+     </ul>
+	</div> -->
+	<script type="text/javascript">
+    $(function(){$(document).scroll(function(){$("#ggao").css("top",$(document).scrollTop()/4)})});
+	</script>	
+	<div id="main">
+	<div class="center">
+		<div class="hgroup">
+		<h1>关于我们</h1>
+		<h2>关于兴趣，关于梦想，关于规划的默默而行！</h2>
+		</div>
+	</div>
+	</div>
+<aside>
+	<div class="asidebar">
+			<div class="hotplace">
+				<h2>景点推荐</h2>
+				<hr/>
+			    <ul>
+				<li><a href="###">曼谷(12)</a></li>
+				<li><a href="###">美国(11)</a></li>
+				<li><a href="###">韩国(6)</a></li>
+				<li><a href="###">毛里求斯(3)</a></li>
+				<li><a href="###">香格里拉(5)</a></li>
+				<li><a href="###">日本(9)</a></li>
+				<li><a href="###">杭州(12)</a></li>
+				<li><a href="###">唐人街(10)</a></li>
+				<li><a href="###">巴厘岛(13)</a></li>
+				<li><a href="###">普吉岛(20)</a></li>
+				<li><a href="###">埃及(12)</a></li>
+				<li><a href="###">迪拜(10)</a></li>
+				<li><a href="###">俄罗斯(15)</a></li>
+				<li><a href="###">越南(11)</a></li>
+				<li><a href="###">老挝(4)</a></li>
+				<li><a href="###">阿富汗(13)</a></li>
+				<li><a href="###">印度阿三(4)</a></li>
+				<li><a href="###">东海道(8)</a></li>
+				<li><a href="###">迪拜(10)</a></li>
+				<li><a href="###">俄罗斯(15)</a></li>
+				<li><a href="###">越南(11)</a></li>
+				</ul>
+			</div>
+			<div class="hotimg">
+				<h2>热点旅游</h2>
+				<hr/>
+				<figure>
+					<img src="images/55.jpg" alt="北京6日游">
+					<figcaption>北京6日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/22.jpg" alt="曼谷5日游">
+					<figcaption>曼谷5日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/66.jpg" alt="普吉岛6日游">
+					<figcaption>普吉岛6日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/44.jpg" alt="日本8日游">
+					<figcaption>日本8日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/11.jpg" alt="韩国首尔3日游">
+					<figcaption>韩国首尔3日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/33.jpg" alt="毛里求斯5日游">
+					<figcaption>毛里求斯5日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/77.jpg" alt="普罗旺斯9日游">
+					<figcaption>普罗旺斯9日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/88.jpg" alt="巴厘岛5日游">
+					<figcaption>巴厘岛5日游</figcaption>
+				</figure>												
+			</div>
+			<div class="box">
+				<h2>旅游百宝箱<h2>
+					<hr/>
+				<a href="###">天气预报</a>
+				<a href="###">火车票查询</a>
+				<a href="###">航空查询</a>
+				<a href="###">地铁线路查询</a>				
+			</div>
+    </div>
+    <div class="about">
+    	<table>
+    		<thead>
+    			<h1>个人基本信息：<h1>
+    				<hr/>
+    		</thead>
+    		<tbody>
+                <tr>
+                	<th>姓名</th>
+                	<th>性别</th>
+                	<th>年龄</th>
+                	<th>学历</th>
+                	<th>工作时间</th>
+                	<th>现居住地</th>
+                </tr>
+    			<tr>
+    				<td>赵勇卫</td>
+    				<td>男</td>
+    				<td>25</td>
+    				<td>本科</td>
+    				<td>2年</td>
+    				<td>北京</td>
+    			</tr>    			
+    		</tbody>
+    	</table>
+    	<h1>关于Myself：</h1>
+    	<hr/>
+    	<div class="navbar">
+    	  <span class="tit_p1">+</span><em>2014年</em>	
+    	<p class="p1" style="display: none;">
+    		2014年3月在上海的一家快递公司（上海增联物流有限公司)的IT部门工作，职位是信息技术专员，桌面运维专员，解决公司出现的网络故障以及电脑，电话，打印机等办公设备出现的故障，机房服务器的基本部署和维护。期间简单接触了html和mysql数据库，对html有了浓厚的兴趣。
+    	</p>
+    	<hr/>
+    	<span class="tit_p2">+</span><em>2015年</em>
+    	<p class="p2" style="display: none;">
+    		2015年5月离职后在上海的一家WEB培训机构培训了一个月，于2015年8月入职于北京的一家公司(南北巢网络科技有限公司)，职位是IT运维及DBA，工作期间空闲时间很多，在空闲时间里对培训的知识进行了实践，自己开发了很多网页，期间又自学了PHP和Javascipt.
+    	</p>
+    	<hr/>
+    	<span class="tit_p3">+</span><em>2016年</em>
+    	<p class="p3" style="display: none;">个人对HTML5，web前端开发有很浓厚的兴趣，但是培训后觉得自己水平还差很多，所以就接着从事IT硬件方面的工作，在空闲时间和周末来自学HTML+CSS，Javascript,Jquery等web技能，自己独自设计并完成了几个网站，包括PC端固定布局的旅游网站，响应式布局的美食网首页等等。我有能力胜任web前端开发的职位。</p>
+    	<hr/>
+    	<p>&nbsp;</p>
+    	</div>
+    	<section>
+    		<h1>联系方式：</h1>
+    		<hr/>
+    		<ul class="heihei">
+    			<li>地址：北京市朝阳区建外大街北京广播大厦</li>
+    			<li>联系电话：010-888888</li>
+    			<li>邮箱：zhaoyongwei@qq.com</li>
+    			<li>邮编：493800</li>
+    		</ul>
+    	</section>
+    	<section>
+    		<h1>职业规划：</h1>
+    		<hr/>
+    		<ul>
+    			<li>IT运维，DBA，网络管理员</li>
+    			<li>WEB前端初级工程师</li>
+    			<li>WEB前端中级工程师</li>
+    			<li>WEB前端高级工程师</li>
+    			<li>PHP开发工程师</li>
+    			<li>框架师，架构师</li>
+    		</ul>
+    	</section>
+    </div>
+</aside>
+	<footer id="footer">
+	<div id="top">
+		<div class="block">
+		<h1>合作伙伴</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">途牛旅游网</a></li>
+			<li><a href="###">驴妈妈旅游网</a></li>
+			<li><a href="###">携程旅游</a></li>
+			<li><a href="###">中国青年旅行社</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>旅游FAQ</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">旅游合作签订方式？</a></li>
+			<li><a href="###">儿童价是基于什么制定的？</a></li>
+			<li><a href="###">旅游的线路品质怎么界定的？</a></li>
+			<li><a href="###">单房差是什么？</a></li>
+			<li><a href="###">旅游保险有哪些种类？</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>联系方式</h1>
+		<hr/>
+		<ul>
+			<li>微博：sonnylight@weibo.com</li>
+			<li>邮件：zhaoyongwei@zeny-express.com</li>
+			<li>地址：北京市朝阳区北京广播大厦</li>
+		</ul>
+		</div>
+	</div>
+	<div id="bottom">
+		<p>Copyright © <span>赵永卫</span> 国际旅行社|京ICP 备120150812 号|旅行社经营许可证：L YC BK12345</p>
+	</div>
+</footer>
+</body>
+</html>

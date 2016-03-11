@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+	<meta charset="UTF-8">
+	<title>页面倒计时跳转</title>
+</head>
+	<script type="text/javascript">
+     function url(page){
+     	var x=document.getElementById("tiao").innerHTML;//取得该ID下的元素内容
+     	if(x>0){
+     		x--;
+     		document.getElementById('tiao').innerHTML=x;//改变元素内容
+     	}
+     	else{
+     		window.location=page;//满足条件时实现跳转页面
+     	}
+     	setTimeout("url('"+page+"')",1000);//设置定时器，每隔1s执行一次函数
+     }
+	</script>
+<body>
+	页面将在<span id="tiao">10</span>秒后跳转... <a href="scenery.html">点击这里直接进入</a>
+	<script type="text/javascript">//因为JS和HTML都是逐句执行的，所以这段脚本要放在最后面
+    url("scenery.html");
+	</script>
+</body>
+</html>

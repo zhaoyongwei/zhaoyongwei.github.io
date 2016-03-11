@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+	<meta charset="UTF-8">
+	<title>项目实战---PC端固定布局</title>
+	<link rel="stylesheet" href="style/basic.css">
+	<link rel="stylesheet" href="style/tourinfo.css">
+    <link rel="icon" href="images/ico.png">
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<style type="text/css">
+html{
+  font-size: 62.5%;
+}
+body,ul,li,img{
+  padding: 0;
+  margin: 0;
+}
+ul{
+  list-style: none;
+}
+.view{
+  width: 400px;
+  position: relative;
+  height: 300px;
+  left: 300px;
+  top:20px;
+  overflow:hidden;
+}
+.bigimg{
+  position: absolute;
+  width:3200px;
+}
+.bigimg ul{
+  position: absolute;
+  width: 3200px;
+}
+.bigimg ul li{
+  float: left;
+}
+.left,.right{
+  position: absolute;
+  background:#999;
+  font-size: 40px;
+  top:130px;
+  cursor: pointer;
+  opacity: 0.5;
+  display: none; 
+  color:#666;
+}
+.left{
+  left:20px;
+}
+.right{
+  right:20px;
+}
+.left:hover,.right:hover{
+  opacity: 1;
+}
+.info{
+  position: absolute;
+  width: 400px;
+  background: #aaa;
+  opacity: 0.5;
+  line-height: 30px;
+  top:270px; 
+  text-indent:20px;
+  color:#f01;
+  font-size: 20px;
+  font-weight: bolder; 
+}
+.num{
+  position:absolute;
+  left:320px; 
+  top:746px;
+  font-size: 15px; 
+}
+.smallimg{
+  position:relative;
+  top:50px;
+  left:300px;
+  width: 400px;
+  overflow: hidden;
+}
+.smallimg ul{
+  position: relative;
+  width: 800px;
+}
+.smallimg ul li{
+  float: left;
+  padding: 0 5px;
+}
+.smallimg img{
+  opacity: 0.5;
+}
+.left1,.right1{
+  position:absolute;
+  background:#ccc;
+  font-size: 20px;
+  top:790px;
+  cursor: pointer;
+  opacity: 0.5;
+  color: #666;
+}
+.left1{
+  left:300px;
+}
+.right1{
+  left: 728px;
+}
+.left1:hover,.right1:hover{
+  opacity: 1;
+}
+.smallimg .select{
+  opacity: 1;
+}
+</style>    	
+</head>
+<body>
+    <div class="back"><a href="#"><img src="images/back.png"></a></div>
+    <script>
+   $(document).ready(function(){
+    $(document).scroll(function(){       
+    if($(document).scrollTop()<100){
+       $(".back").hide();
+    }
+    else{
+       $(".back").show();  
+    }        
+    })
+    $("#nav .nav-sec .link>li").hover(function(){
+        $("em",this).css("height","1px");
+        $("em",this).animate({
+            width:"110px",
+            left:0,            
+            right:0
+        },500)
+    },function(){
+         $("em",this).stop().animate({
+            left:"55px",
+            width:0
+         },500)
+    })    
+})
+    </script> 
+    <iframe width="420" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&color=%23FFFFFF&icon=1&py=beijing&num=5"></iframe>
+         
+	<nav id="nav">
+		<section class="nav-sec">
+			<ul class="link">
+				<li><a href="index.html">首页</a><em></em></li>
+				<li><a href="tourinfo.html">旅行资讯</a><em></em></li>
+				<li><a href="tickets.html">机票订购</a><em></em></li>
+				<li><a href="###">个人信息<span></span><em></em></a>
+                    <ul>
+                    	<li>姓名：赵永卫</li>
+                    	<li>性别：男</li>
+                    	<li>学历：本科</li> 
+                    	<li>工作时间：两年</li>                  	                   	 
+                    	<li>兴趣爱好：HTML5，WEB前端</li>
+                    	<li>自学过：Javascript,PHP</li> 
+                    	<li>定位：web前端工程师</li>      
+                    </ul>
+				</li>					
+				<li class="select"><a href="scenery.html">风景轮播</a><em></em></li>
+				<li><a href="about.html">联系我们</a><em></em></li>
+                <li><a href="register.html">注册/登录</a><em></em></li>
+			</ul>
+		</section>
+	</nav>
+<!-- 	<div id="ggao">
+     <ul>
+     	<li>热爱前端开发</li>
+        <li>精通DIV+CSS布局</li>
+        <li>熟悉Bootstrap框架</li>
+        <li>熟悉PHP后端语言</li>
+        <li>熟悉Javascript，Jquery</li>
+        <li>自己完成了几个网站项目</li>
+        <li>定位为WEB前端工程师</li>
+     	<li class="getmore"><a href="about.html">了解更多.....</a></li>
+     	<li id="close"><a href="javascript:void()" onclick="document.getElementById('ggao').style.visibility='hidden'"><span>☒</span>关闭悬浮广告</a></li>
+     </ul>
+	</div> -->
+    <script type="text/javascript">
+    $(function(){$(document).scroll(function(){$("#ggao").css("top",$(document).scrollTop()/4)})});
+    </script>    
+	<div id="main">
+	<div class="center">
+		<div class="hgroup">
+		<h1>美景欣赏</h1>
+		<h2>最美丽的风景，最震撼的视觉享受，最值得一去的地方！</h2>
+		</div>
+	</div>
+	</div>
+<aside>
+	<div class="asidebar">
+			<div class="hotimg">
+        <h2>热点资讯</h2>
+        <div id="demo"> 
+          <div id="demo1"> 
+            <ul> 
+              <li><a href="#">1、努力奋斗才会有美好的明天...</a></li> 
+              <li><a href="#">2、没有人一开始就是高手...</a></li> 
+              <li><a href="#">3、不念过去，不畏将来...</a></li> 
+              <li><a href="#">4、太阳出来了，好好享受生活...</a></li>
+              <li><a href="#">5、每一天都是新的，把握现在...</a></li> 
+              <li><a href="#">6、新的一年里要有进步...</a></li> 
+              <li><a href="#">7、人人都有可贵之处，在于发现</a></li>
+              <li><a href="#">8、web工程师之路，不畏挑战...</a></li>
+              <li><a href="#">9、不乱于心，不困于情...</a></li> 
+              <li><a href="#">10、这是最后一条(figiting)</a></li> 
+            </ul> 
+          </div> 
+          <div id="demo2"></div> 
+        </div>
+         <script type="text/javascript">  
+        var timer=null; 
+        window.onload=function() 
+        { 
+          var demo=document.getElementById("demo");  
+          var demo1=document.getElementById("demo1");  
+          var demo2=document.getElementById("demo2"); 
+          demo2.innerHTML=demo1.innerHTML;
+          function moveTop(){
+            if(demo1.offsetHeight-demo.scrollTop<=0)
+            {
+              demo.scrollTop=0;
+            }
+            else
+            {
+              demo.scrollTop++;
+            }
+          } 
+          timer=setInterval(moveTop,100);
+          demo.onmouseover=function(){clearInterval(timer);};
+          demo.onmouseout=function(){timer=setInterval(moveTop,100);};
+           } 
+         </script>                 
+        <hr/>        
+				<h2>热点旅游</h2>
+				<hr/>
+				<figure>
+					<img src="images/55.jpg" alt="北京6日游">
+					<figcaption>北京6日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/22.jpg" alt="曼谷5日游">
+					<figcaption>曼谷5日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/66.jpg" alt="普吉岛6日游">
+					<figcaption>普吉岛6日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/44.jpg" alt="日本8日游">
+					<figcaption>日本8日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/11.jpg" alt="韩国首尔3日游">
+					<figcaption>韩国首尔3日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/33.jpg" alt="毛里求斯5日游">
+					<figcaption>毛里求斯5日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/77.jpg" alt="普罗旺斯9日游">
+					<figcaption>普罗旺斯9日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/88.jpg" alt="巴厘岛5日游">
+					<figcaption>巴厘岛5日游</figcaption>
+				</figure>												
+			</div>
+			<div class="box">
+				<h2>旅游百宝箱<h2>
+					<hr/>
+				<a href="###">天气预报</a>
+				<a href="###">火车票查询</a>
+				<a href="###">航空查询</a>
+				<a href="###">地铁线路查询</a>				
+			</div>
+    </div>
+ <div class="scenery">
+        <h1>缩略图轮播欣赏美景图</h1>
+        <hr/>
+ <div class="view">
+   <div class="bigimg">
+     <ul>
+       <li><img src="image/1.jpg" alt="风景秀丽之地"/></li>
+       <li><img src="image/2.jpg" alt="鬼斧神工之地"/></li>
+       <li><img src="image/3.jpg" alt="流连忘返之地"/></li>
+       <li><img src="image/4.jpg" alt="过目难忘之地"/></li>
+       <li><img src="image/5.jpg" alt="心旷神怡之地"/></li>
+       <li><img src="image/6.jpg" alt="感慨万千之地"/></li>
+       <li><img src="image/7.jpg" alt="美不胜收之地"/></li>
+       <li><img src="image/8.jpg" alt="人间仙境之地"/></li>
+     </ul>
+   </div>
+   <div class="right">▶</div>
+   <div class="left">◀</div>
+   <div class="info">风景秀丽之地</div>
+ </div>
+ <div class="num"><span>1</span>/8</div>
+<div class="smallimg">
+     <ul>
+       <li><img src="image/11.jpg" class="select"/></li>
+       <li><img src="image/22.jpg"/></li>
+       <li><img src="image/33.jpg"/></li>
+       <li><img src="image/44.jpg"/></li>
+       <li><img src="image/55.jpg"/></li>
+       <li><img src="image/66.jpg"/></li>
+       <li><img src="image/77.jpg"/></li>
+       <li><img src="image/88.jpg"/></li>
+     </ul>
+</div>
+   <div class="right1">▶</div>
+   <div class="left1">◀</div>
+        <figure style="margin:100px 0 0 50px;">
+            <img src="images/8.jpg" title="巴厘岛风景">
+        </figure>
+        <figure style="margin:100px 0 0 50px;">
+            <img src="images/2.jpg" title="香格里拉风景">
+        </figure>
+        <figure>
+            <img src="images/9.jpg" title="日本岛风景">
+        </figure>
+         <figure>
+            <img src="images/7.jpg" title="普罗旺斯风景">
+        </figure>   
+</body>
+<script>
+  $(document).ready(function(){
+
+  //隐藏和显示左右按钮
+  $(".view").hover(function(){
+    $(".left,.right").show();
+  },function(){
+    $(".left,.right").hide();
+  })
+
+ //轮播器
+  var n=0;//最重要的参数，全局变量
+  $(".right").click(function(){
+    n++;
+    if(n==8){n=0};
+    $(".bigimg ul").animate({right:n*400+"px"},200);
+    $(".info").text($(".bigimg ul img").eq(n).attr("alt"));//显示该索引下图片的alt属性
+    $(".num span").text(n+1);
+    $(".smallimg img").removeClass("select");
+    $(".smallimg img").eq(n).addClass("select");
+    if(n==4){
+     $(".smallimg ul").animate({right:400+"px"}); 
+    }
+    if(n==0){
+      $(".smallimg ul").animate({right:0+"px"});
+    }
+    if(n<4){
+      $(".smallimg ul").animate({right:0+"px"});  
+    }
+    if(n>=4){
+      $(".smallimg ul").animate({right:400+"px"});  
+    }
+  })
+  $(".left").click(function(){
+    n--;
+    if(n==-1){n=7};
+    $(".bigimg ul").animate({right:n*400+"px"},200);
+    $(".info").text($(".bigimg ul img").eq(n).attr("alt"));
+    $(".num span").text(n+1);
+    $(".smallimg img").removeClass("select");
+    $(".smallimg img").eq(n).addClass("select");
+    if(n==7){
+     $(".smallimg ul").animate({right:400+"px"}); 
+    }
+    if(n==2||n==3){
+      $(".smallimg ul").animate({right:0+"px"});
+    }
+    if(n<4){
+      $(".smallimg ul").animate({right:0+"px"});  
+    }
+    if(n>=4){
+      $(".smallimg ul").animate({right:400+"px"});  
+    }
+  })
+
+   var m=0;
+   $(".right1").click(function(){
+    $(".smallimg ul").animate({right:400+"px"});
+   })
+   $(".left1").click(function(){
+    $(".smallimg ul").animate({right:0+"px"});
+   })
+ //鼠标悬浮在图片上，图片变亮
+    $(".smallimg ul img").click(function(){
+      $(".smallimg ul img").removeClass("select");
+      $(this).addClass("select");
+      m=$(".smallimg ul img").index(this);
+      n=m;      
+      $(".bigimg ul").animate({right:m*400+"px"},200);
+      $(".num span").text(m+1);
+      $(".info").text($(".bigimg ul img").eq(n).attr("alt"));
+    })
+    $(".smallimg img").eq(1).click(function(){
+     $(".smallimg ul").animate({right:0+"px"}); 
+    })
+    $(".smallimg img").eq(2).click(function(){
+     $(".smallimg ul").animate({right:100+"px"}); 
+    })
+    $(".smallimg img").eq(3).click(function(){
+     $(".smallimg ul").animate({right:200+"px"}); 
+    })
+    $(".smallimg img").eq(4).click(function(){
+     $(".smallimg ul").animate({right:200+"px"}); 
+    })
+    $(".smallimg img").eq(5).click(function(){
+     $(".smallimg ul").animate({right:400+"px"}); 
+    })
+    $(".smallimg img").eq(6).click(function(){
+     $(".smallimg ul").animate({right:400+"px"}); 
+    })
+   
+  
+  })
+</script>                     
+</div> 
+</aside>
+	<footer id="footer">
+	<div id="top">
+		<div class="block">
+		<h1>合作伙伴</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">途牛旅游网</a></li>
+			<li><a href="###">驴妈妈旅游网</a></li>
+			<li><a href="###">携程旅游</a></li>
+			<li><a href="###">中国青年旅行社</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>旅游FAQ</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">旅游合作签订方式？</a></li>
+			<li><a href="###">儿童价是基于什么制定的？</a></li>
+			<li><a href="###">旅游的线路品质怎么界定的？</a></li>
+			<li><a href="###">单房差是什么？</a></li>
+			<li><a href="###">旅游保险有哪些种类？</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>联系方式</h1>
+		<hr/>
+		<ul>
+			<li>微博：sonnylight@weibo.com</li>
+			<li>邮件：zhaoyongwei@zeny-express.com</li>
+			<li>地址：北京市朝阳区北京广播大厦</li>
+		</ul>
+		</div>
+	</div>
+	<div id="bottom">
+		<p>Copyright © <span>赵永卫</span> 国际旅行社|京ICP 备120150812 号|旅行社经营许可证：L YC BK12345</p>
+	</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+	<meta charset="UTF-8">
+	<title>项目实战---PC端固定布局</title>
+	<link rel="stylesheet" href="style/basic.css">
+	<link rel="stylesheet" href="style/tourinfo.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	    <script type="text/javascript">
+        $(function () {
+            //e为事件名；
+            $(document).mousemove(function (e) {
+                var x=e.pageX;
+                var y=e.pageY;
+                $("#pp").text("X:" + e.pageX + "   Y:" + e.pageY);
+                $("#monse").css({top:y+10,left:x-80})               
+            });
+        });
+    </script>		
+	<link rel="icon" href="images/ico.png">
+</head>
+<body>
+	<div class="back"><a href="#"><img src="images/back.png"></a></div>
+	<script>
+   $(document).ready(function(){
+    $(document).scroll(function(){       
+    if($(document).scrollTop()<100){
+       $(".back").hide();
+    }
+    else{
+       $(".back").show();  
+    }        
+    })
+    $("#nav .nav-sec .link>li").hover(function(){
+        $("em",this).css("height","1px");
+        $("em",this).animate({
+            width:"110px",
+            left:0,            
+            right:0
+        },500)
+    },function(){
+         $("em",this).stop().animate({
+            left:"55px",
+            width:0
+         },500)
+    })    
+})
+	</script>
+	<iframe width="420" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&color=%23FFFFFF&icon=1&py=beijing&num=5"></iframe>	
+	<div id="monse" style="position: absolute;font-size:20px;height:30px;width:100px;line-height: 30px;text-align:left;color:red;z-index:9999">我可以!</div>		
+	<nav id="nav">
+		<section class="nav-sec">
+			<ul class="link">
+				<li><a href="index.html">首页</a><em></em></li>
+				<li class="select"><a href="tourinfo.html">旅行资讯</a><em></em></li>
+				<li><a href="tickets.html">机票订购</a><em></em></li>
+				<li><a href="###">个人信息<span></span><em></em></a>
+                    <ul>
+                    	<li>姓名：赵永卫</li>
+                    	<li>性别：男</li>
+                    	<li>学历：本科</li> 
+                    	<li>工作时间：两年</li>                    	                   	 
+                    	<li>兴趣爱好：HTML5，WEB前端</li>
+                    	<li>自学过：Javascript,PHP</li> 
+                    	<li>定位：web前端工程师</li>      
+                    </ul>
+				</li>	
+				<li><a href="scenery.html">风景轮播</a><em></em></li>				
+				<li><a href="about.html">联系我们</a><em></em></li>
+				<li><a href="register.html">注册/登录</a><em></em></li>
+			</ul>
+		</section>
+	</nav>
+	<div id="ggao">
+     <ul>
+     	<li>热爱前端开发</li>
+     	<li>精通DIV+CSS布局</li>
+     	<li>熟悉Bootstrap框架</li>
+     	<li>熟悉PHP后端语言</li>
+     	<li>熟悉Javascript，Jquery</li>
+     	<li>自己完成了几个网站项目</li>
+     	<li>定位为WEB前端工程师</li>
+     	<li class="getmore"><a href="about.html">了解更多.....</a></li>
+     	<li id="close"><a href="javascript:void()" onclick="document.getElementById('ggao').style.visibility='hidden'"><span>☒</span>关闭悬浮广告</a></li>
+     </ul>
+	</div>
+	<script type="text/javascript">
+    $(function(){$(document).scroll(function(){$("#ggao").css("top",$(document).scrollTop()/4)})});
+    // $(function(){$(document).scroll(function(){$("#www").css("font-size",$(document).scrollTop())})})
+	</script>	
+	<div id="main">
+	<div class="center">
+		<div class="hgroup">
+		<h1>旅游咨询</h1>
+		<h2>介绍最新的旅游信息，资讯要闻，景点攻略等</h2>
+		</div>
+	</div>
+	</div>
+<aside>
+	<div class="asidebar">
+			<div class="hotimg">
+        <h2>热点资讯</h2>
+        <div id="demo"> 
+          <div id="demo1"> 
+            <ul> 
+              <li><a href="#">1、努力奋斗才会有美好的明天...</a></li> 
+              <li><a href="#">2、没有人一开始就是高手...</a></li> 
+              <li><a href="#">3、不念过去，不畏将来...</a></li> 
+              <li><a href="#">4、太阳出来了，好好享受生活...</a></li>
+              <li><a href="#">5、每一天都是新的，把握现在...</a></li> 
+              <li><a href="#">6、新的一年里要有进步...</a></li> 
+              <li><a href="#">7、人人都有可贵之处，在于发现</a></li>
+              <li><a href="#">8、web工程师之路，不畏挑战...</a></li>
+              <li><a href="#">9、不乱于心，不困于情...</a></li> 
+              <li><a href="#">10、这是最后一条(figiting)</a></li> 
+            </ul> 
+          </div> 
+          <div id="demo2"></div> 
+        </div>
+         <script type="text/javascript">  
+        var timer=null; 
+        window.onload=function() 
+        { 
+          var demo=document.getElementById("demo");  
+          var demo1=document.getElementById("demo1");  
+          var demo2=document.getElementById("demo2"); 
+          demo2.innerHTML=demo1.innerHTML;
+          function moveTop(){
+            if(demo1.offsetHeight-demo.scrollTop<=0)
+            {
+              demo.scrollTop=0;
+            }
+            else
+            {
+              demo.scrollTop++;
+            }
+          } 
+          timer=setInterval(moveTop,100);
+          demo.onmouseover=function(){clearInterval(timer);};
+          demo.onmouseout=function(){timer=setInterval(moveTop,100);};
+           } 
+         </script>                 
+        <hr/> 				
+				<h2>热点旅游</h2>
+				<hr/>
+				<figure>
+					<img src="images/55.jpg" alt="北京6日游">
+					<figcaption>北京6日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/22.jpg" alt="曼谷5日游">
+					<figcaption>曼谷5日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/66.jpg" alt="普吉岛6日游">
+					<figcaption>普吉岛6日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/44.jpg" alt="日本8日游">
+					<figcaption>日本8日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/11.jpg" alt="韩国首尔3日游">
+					<figcaption>韩国首尔3日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/33.jpg" alt="毛里求斯5日游">
+					<figcaption>毛里求斯5日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/77.jpg" alt="普罗旺斯9日游">
+					<figcaption>普罗旺斯9日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/88.jpg" alt="巴厘岛5日游">
+					<figcaption>巴厘岛5日游</figcaption>
+				</figure>												
+			</div>
+			<div class="box">
+				<h2>旅游百宝箱<h2>
+					<hr/>
+				<a href="###">天气预报</a>
+				<a href="###">火车票查询</a>
+				<a href="###">航空查询</a>
+				<a href="###">地铁线路查询</a>				
+			</div>
+	</div>
+ <div id="list">
+<!-- 		<div class="contain">
+			<div class="listleft">
+				<ul>
+					<li  class="select"><a href="###">限时特购</a></li>
+				</ul>
+			</div>
+		    <div class="listright">
+				<ul>
+					<li><a class="select" href="###">推荐</a></li>
+				</ul>
+		    </div>
+         </div>	 -->		
+				<figure class="tour">
+					<img src="images/1.jpg" alt="大阪-京都双飞5日游" title="大阪-京都双飞5日游">
+					<figcaption class="jieshao">
+						<header>
+							<h2>大阪-京都双飞5日游</h2>
+						</header>
+						    <div class="txt">
+							    <h3>盐城直飞，不走回头路，境外无自费，超值享受之旅....</h3>
+							    <ul>
+							    <li><mark>交通</mark>春秋航空，杭州出发，无需转机</li>
+							    <li><mark>团期</mark>11/01、11/03、11/08....<li>
+							    </ul>
+						        <div class="jiage">
+						    	<em>¥5666</em>&nbsp;<del>¥8795</del>
+						        </div>
+						        <div class="button">
+						        	<a href="###">立即抢购</a>
+						        </div>
+						    </div>
+						<footer>本团游由赵永卫独家赞助提供，截止于<time>2016-3-5</time>
+						</footer>              
+						<div class="type">境内长线</div>
+						<div class="dazhe"><span>7.5折</span></div>
+					</figcaption>
+				</figure>
+                <figure class="tour">
+					<img src="images/2.jpg" alt="泰国-老挝7日游" title="泰国-老挝7日游">
+					<figcaption class="jieshao">
+						<article>
+						<header>
+							<h2>泰国-老挝7日游</h2>
+						</header>
+						    <div class="txt">
+							    <h3>盐城直飞，不走回头路，境外无自费，超值享受之旅....</h3>
+							    <ul>
+							    <li><mark>交通</mark>春秋航空，杭州出发，无需转机</li>
+							    <li><mark>团期</mark>11/05、11/09、11/011....<li>
+							    </ul>
+						        <div class="jiage">
+						    	<em>¥9999</em>&nbsp;<del>¥12999</del>
+						        </div>
+						        <div class="button">
+						        	<a href="###">立即抢购</a>
+						        </div>
+						    </div>
+						<footer>本团游由赵永卫独家赞助提供，截止于<time>2016-3-5</time>
+						</footer>              
+						</article>
+						<div class="type">国外长线</div>
+						<div class="dazhe"><span>8.5折</span></div>
+					</figcaption>
+				</figure>	
+                <figure class="tour">
+					<img src="images/3.jpg" alt="韩国-富士山5日游" title="韩国-富士山5日游">
+					<figcaption class="jieshao">
+						<article>
+						<header>
+							<h2>韩国-富士山5日游</h2>
+						</header>
+						    <div class="txt">
+							    <h3>郑州直飞，不走回头路，境外无自费，超值享受之旅....</h3>
+							    <ul>
+							    <li><mark>交通</mark>春秋航空，杭州出发，无需转机</li>
+							    <li><mark>团期</mark>05/01、05/03、05/08....<li>
+							    </ul>
+						        <div class="jiage">
+						    	<em>¥6666</em>&nbsp;<del>¥8888</del>
+						        </div>
+						        <div class="button">
+						        	<a href="###">立即抢购</a>
+						        </div>
+						    </div>
+						<footer>本团游由赵永卫独家赞助提供，截止于<time>2016-3-5</time>
+						</footer>              
+						</article>
+						<div class="type">国内长线</div>
+						<div class="dazhe"><span>9.0折</span></div>
+					</figcaption>
+				</figure>
+
+				<div class="more"><a href="goto.html">加载更多...</a></div>	
+ </div>									
+</aside>
+	<footer id="footer">
+	<div id="top">
+		<div class="block">
+		<h1>合作伙伴</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">途牛旅游网</a></li>
+			<li><a href="###">驴妈妈旅游网</a></li>
+			<li><a href="###">携程旅游</a></li>
+			<li><a href="###">中国青年旅行社</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>旅游FAQ</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">旅游合作签订方式？</a></li>
+			<li><a href="###">儿童价是基于什么制定的？</a></li>
+			<li><a href="###">旅游的线路品质怎么界定的？</a></li>
+			<li><a href="###">单房差是什么？</a></li>
+			<li><a href="###">旅游保险有哪些种类？</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>联系方式</h1>
+		<hr/>
+		<ul>
+			<li>微博：sonnylight@weibo.com</li>
+			<li>邮件：zhaoyongwei@zeny-express.com</li>
+			<li>地址：北京市朝阳区北京广播大厦</li>
+		</ul>
+		</div>
+	</div>
+	<div id="bottom">
+		<p>Copyright © <span>赵永卫</span> 国际旅行社|京ICP 备120150812 号|旅行社经营许可证：L YC BK12345</p>
+	</div>
+</footer>
+</body>
+</html>

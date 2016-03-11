@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+	<meta charset="UTF-8">
+	<title>项目实战---PC端固定布局</title>
+	<link rel="stylesheet" href="style/basic.css">
+	<link rel="stylesheet" href="style/tourinfo.css">
+<style type="text/css">
+label{
+  float: left;
+  line-height: 30px;
+  margin: 0 0 0 120px;
+}
+.input{
+  float: left;
+  width: 100px;
+  height: 30px;
+  position: relative;
+  top:-20px;
+}
+#code{
+  display: inline-block;
+  float: left;
+  height: 30px;
+  width: 100px;
+  background:white;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bolder;
+  cursor: pointer;
+  position: relative;
+  left:10px;
+}
+.p{
+   cursor: pointer;
+   display: inline-block;
+   line-height: 30px;
+   position: relative;
+   left:-50px;
+}
+.p a{
+  text-decoration: underline;
+  color: red;
+}
+.p a:hover{
+  color: red;
+}
+</style>  
+	<script type="text/javascript" src="jquery.js"></script>	
+	<link rel="icon" href="images/ico.png">
+    <script>
+    function reghid(){
+    document.getElementById('qqlog').style.visibility='hidden';    
+    document.getElementById('reg').style.visibility='hidden';
+    document.getElementById('log').style.visibility='visible';
+    document.getElementById('reghid').style.background='#999';
+    document.getElementById('reghid').style.color='white';
+    document.getElementById('normal').style.background='#eee';
+    document.getElementById('normal').style.color='black';
+    document.getElementById('loghid').style.background='#eee';
+    document.getElementById('loghid').style.color='black';    
+    }
+    function loghid(){
+    document.getElementById('reg').style.visibility='hidden';
+    document.getElementById('log').style.visibility='visible';
+    document.getElementById('log').style.visibility='hidden';
+    document.getElementById('qqlog').style.visibility='visible';
+    document.getElementById('loghid').style.background='#999';
+    document.getElementById('loghid').style.color='white';
+    document.getElementById('reghid').style.background='#eee';
+    document.getElementById('reghid').style.color='black';            
+    }
+    function normal(){
+    document.getElementById('reg').style.visibility='visible';        
+    document.getElementById('qqlog').style.visibility='hidden';
+    document.getElementById('log').style.visibility='hidden';
+    document.getElementById('reghid').style.background='#eee';
+    document.getElementById('reghid').style.color='black';
+    document.getElementById('loghid').style.background='#eee';
+    document.getElementById('loghid').style.color='black'; 
+    document.getElementById('normal').style.background='#999';
+    document.getElementById('normal').style.color='white';               
+    }
+    
+    window.onload=function(){
+        document.getElementById('focus').focus();
+    }
+
+    function doAction(){
+           var n=document.myform[0].na.value;
+           var flag=false;
+           var regname=/^[0-9a-zA-Z]+$/;
+           if(!regname.test(n)){
+            alert('用户名不符合要求');
+           }
+
+           var pass1,pass2;
+           pass1=document.myform[0].psd.value;
+           var password=/^[0-9a-zA-Z]+$/;
+           if(!password.test(pass1)){
+            alert('密码不符合要求');
+           }
+
+           pass2=document.myform[0].check.value;
+           if(!(pass2===pass1)){
+            alert('前后密码不一致');
+           }    
+
+        var email=document.myform[0].email.value;
+        var reg=/^[0-9a-zA-Z_]+@[0-9a-zA-Z]+[\.]{1}[0-9a-zA-Z]+[\.]?[0-9a-zA-Z]+$/;
+        if(!reg.test(email)){
+            alert('邮箱地址不符合要求！');
+           }
+
+        var val=document.getElementById("yzm").value.toUpperCase();
+        var codeval=document.getElementById("code").innerHTML.replace(/\s/g,"");
+        if(String(val)==""&&String(codeval)==""){
+          alert("请填写验证码");
+        }
+        else if(!String(val)===String(codeval)){
+        alert('验证码不正确');
+        }
+ 
+                     
+         if(!(regname.test(n)&&password.test(pass1)&&(pass2===pass1)&&reg.test(email)&&(String(val)===String(codeval)))){
+            alert('注册失败');
+         }
+         else{
+         	alert('注册成功');
+            document.myform[0].action="index.html";
+         }
+  } 
+
+        function enable(){
+            if(document.myform[0].tiaokuan.checked){
+                document.myform[0].butt.disabled=false;
+            }
+            else{
+                document.myform[0].butt.disabled=true;
+            }
+        }
+    function doAction1(){          
+           var n=document.myform[1].na.value;
+           var regname=/^[0-9a-zA-Z]+$/;
+           if(!regname.test(n)){
+            alert('用户名不正确');
+           }
+           var pass1;
+           pass1=document.myform[1].psd.value;
+           var password=/^[0-9a-zA-Z]+$/;
+           if(!password.test(pass1)){
+            alert('密码不正确');
+           }       
+
+  }
+    function doAction2(){          
+           var n=document.myform[2].na.value;
+           var regname=/^[0-9a-zA-Z]+$/;
+           if(!regname.test(n)){
+            alert('用户名不正确');
+           }
+           var pass1;
+           pass1=document.myform[2].psd.value;
+           var password=/^[0-9a-zA-Z]+$/;
+           if(!password.test(pass1)){
+            alert('密码不正确');
+           } 
+  } 
+
+function codecreate(){
+    var code="";
+    var color="#";
+    var fontcolor="#";
+    var array= new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R',  
+     'S','T','U','V','W','X','Y','Z')
+    for(var i=0;i<4;i++){
+      code += array[Math.floor(Math.random()*36)]+" ";
+    }
+    for(var i=0;i<6;i++){
+      color+= array[Math.floor(Math.random()*16)];
+    }
+    for(var i=0;i<6;i++){
+      fontcolor+= array[Math.floor(Math.random()*16)];
+    }
+  document.getElementById("code").innerHTML=code;
+  document.getElementById("code").style.backgroundColor=color;
+  document.getElementById("code").style.color=fontcolor;
+  }
+  $(document).ready(function(){
+    $("#code").hide();
+    $(".p").click(function(){
+      $(".p").hide();
+      $("#code").show();
+    })       
+    $("#nav .nav-sec .link>li").hover(function(){
+        $("em",this).css("height","1px");
+        $("em",this).animate({
+            width:"110px",
+            left:0,            
+            right:0
+        },500)
+    },function(){
+         $("em",this).stop().animate({
+            left:"55px",
+            width:0
+         },500)    
+    })
+    $("#yzm").blur(function(){
+       var val=document.getElementById("yzm").value.toUpperCase();
+        var codeval=document.getElementById("code").innerHTML.replace(/\s/g,"");
+      if(String(val)==""&&String(codeval)==""){
+          alert("请填写验证码");
+        }
+        else if(String(val)===String(codeval)){
+        $(".yanz").text("✔").css("color","blue");
+        }
+        else{
+          $(".yanz").text("✘").css("color","red");
+        } 
+    })
+
+  })
+
+  function codecheck(){
+    var val=document.getElementById("yzm").value.toUpperCase();
+    var codeval=document.getElementById("code").innerHTML.replace(/\s/g,"");
+    if(!String(val)===String(codeval)){
+     alert("验证码不正确"); 
+    }
+      
+  }   
+    </script>	
+</head>
+<body>
+    <div class="back"><a href="#"><img src="images/back.png"></a></div>
+    <script>
+   $(document).ready(function(){
+    $(document).scroll(function(){       
+    if($(document).scrollTop()<100){
+       $(".back").hide();
+    }
+    else{
+       $(".back").show();  
+    }        
+    })
+})
+    </script>  
+  <iframe width="420" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&color=%23FFFFFF&icon=1&py=beijing&num=5"></iframe>
+    
+	<nav id="nav">
+		<section class="nav-sec">
+			<ul class="link">
+				<li><a href="index.html">首页</a><em></em></li>
+				<li><a href="tourinfo.html">旅行资讯</a><em></em></li>
+				<li><a href="tickets.html">机票订购</a><em></em></li>
+				<li><a href="###">个人信息<span></span><em></em></a>
+                    <ul>
+                    	<li>姓名：赵永卫</li>
+                    	<li>性别：男</li>
+                    	<li>学历：本科</li> 
+                    	<li>工作时间：两年</li>                   	                   	 
+                    	<li>兴趣爱好：HTML5，WEB前端</li>
+                    	<li>自学过：Javascript,PHP</li> 
+                    	<li>定位：web前端工程师</li>      
+                    </ul>
+				</li>				
+				<li><a href="scenery.html">风景轮播</a><em></em></li>
+				<li><a href="about.html">联系我们</a><em></em></li>
+				<li class="select"><a href="register.html">注册/登录</a><em></em></li>
+			</ul>
+		</section>
+	</nav>
+<!-- 	<div id="ggao">
+     <ul>
+     	<li>热爱前端开发</li>
+     	<li>精通DIV+CSS布局</li>
+     	<li>熟悉Bootstrap框架</li>
+     	<li>熟悉PHP后端语言</li>
+     	<li>熟悉Javascript，Jquery</li>
+     	<li>自己完成了几个网站项目</li>
+     	<li>定位为WEB前端工程师</li>
+     	<li class="getmore"><a href="about.html">了解更多.....</a></li>
+     	<li id="close"><a href="javascript:void()" onclick="document.getElementById('ggao').style.visibility='hidden'"><span>☒</span>关闭悬浮广告</a></li>
+     </ul>
+	</div> -->
+	<script type="text/javascript">
+    $(function(){$(document).scroll(function(){$("#ggao").css("top",$(document).scrollTop()/4)})});
+	</script>	
+	<div id="main">
+	<div class="center">
+		<div class="hgroup">
+		<h1>关于我们</h1>
+		<h2>关于兴趣，关于梦想，关于规划的默默而行！</h2>
+		</div>
+	</div>
+	</div>
+<aside>
+	<div class="asidebar">
+			<div class="hotplace">
+				<h2>景点推荐</h2>
+				<hr/>
+			    <ul>
+				<li><a href="###">曼谷(12)</a></li>
+				<li><a href="###">美国(11)</a></li>
+				<li><a href="###">韩国(6)</a></li>
+				<li><a href="###">毛里求斯(3)</a></li>
+				<li><a href="###">香格里拉(5)</a></li>
+				<li><a href="###">日本(9)</a></li>
+				<li><a href="###">杭州(12)</a></li>
+				<li><a href="###">唐人街(10)</a></li>
+				<li><a href="###">巴厘岛(13)</a></li>
+				<li><a href="###">普吉岛(20)</a></li>
+				<li><a href="###">埃及(12)</a></li>
+				<li><a href="###">迪拜(10)</a></li>
+				<li><a href="###">俄罗斯(15)</a></li>
+				<li><a href="###">越南(11)</a></li>
+				<li><a href="###">老挝(4)</a></li>
+				<li><a href="###">阿富汗(13)</a></li>
+				<li><a href="###">印度阿三(4)</a></li>
+				<li><a href="###">东海道(8)</a></li>
+				<li><a href="###">迪拜(10)</a></li>
+				<li><a href="###">俄罗斯(15)</a></li>
+				<li><a href="###">越南(11)</a></li>
+				</ul>
+			</div>
+			<div class="hotimg">
+				<h2>热点旅游</h2>
+				<hr/>
+				<figure>
+					<img src="images/55.jpg" alt="北京6日游">
+					<figcaption>北京6日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/22.jpg" alt="曼谷5日游">
+					<figcaption>曼谷5日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/66.jpg" alt="普吉岛6日游">
+					<figcaption>普吉岛6日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/44.jpg" alt="日本8日游">
+					<figcaption>日本8日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/11.jpg" alt="韩国首尔3日游">
+					<figcaption>韩国首尔3日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/33.jpg" alt="毛里求斯5日游">
+					<figcaption>毛里求斯5日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/77.jpg" alt="普罗旺斯9日游">
+					<figcaption>普罗旺斯9日游</figcaption>
+				</figure>
+				<figure>
+					<img src="images/88.jpg" alt="巴厘岛5日游">
+					<figcaption>巴厘岛5日游</figcaption>
+				</figure>												
+			</div>
+			<div class="box">
+				<h2>旅游百宝箱<h2>
+					<hr/>
+				<a href="###">天气预报</a>
+				<a href="###">火车票查询</a>
+				<a href="###">航空查询</a>
+				<a href="###">地铁线路查询</a>				
+			</div>
+    </div>
+<div class="navg">
+	    	<h1>注册登录界面</h1>
+    <ul>
+        <li id="normal" onclick="normal()">注册</li>
+        <li id="reghid" onclick="reghid()">登录</li>
+        <li id="loghid" onclick="loghid()">QQ登录</li>
+    </ul>    
+    </div>
+    <div id="reg">
+    <form name="myform" >
+        <h1>注册</h1>
+        账　　号：<input type="text" id="focus" name="na" placeholder="请输入账号" class="chang" required >*<br/>
+        密　　码：<input type="password" name="psd" placeholder="请输入密码" class="chang" required>*<br/>
+        确认密码：<input type="password" name="check" placeholder="再次输入密码" class="chang">*<br/>
+        邮　　箱：<input type="text" name="email" placeholder="请输入邮箱" class="chang" required>*<br/>
+        <label for="yzm">验 证 码：</label><input type="text" class="input" id="yzm">
+        <div id="code" onclick="codecreate()" required></div>
+        <p onclick="codecreate()" class="p"><a>点此获得验证码</a></p>
+        <p class="yanz"></p>
+        <textarea rows="20" cols="82"  readonly=true class="area">
+接收条款:1、欢迎光临我的网站，现在我来介绍一下我的网站和我自己！2、个人简介：
+2014年3月在上海的一家快递公司（上海增联物流有限公司)的IT部门工作，职位是信息技术专员，桌面运维专员，解决公司出现的网络故障以及电脑，电话，打印机等办公设备出现的故障，机房服务器的基本部署和维护。期间简单接触了html和mysql数据库，对html有了浓厚的兴趣。
+2015年5月离职后在上海的一家培训机构培训了HTML5，于2015年8月入职于北京的一家公司(南北巢网络科技有限公司)，职位是IT运维及DBA，工作期间空闲时间很多，在空闲时间里对培训的知识进行了实践，自己开发了很多静态网页，期间又自学了PHP和Javascipt.
+个人对HTML5，web前端开发有很浓厚的兴趣，但是培训后觉得自己水平还差很多，所以就接着从事IT硬件方面的工作，所以就在空闲时间和周末来对自己培训过的东西进行实践，学到了很多东西，进步了很多。所以现在的我有能力胜任web前端开发的职位。
+HTML5：
+标准通用标记语言下的一个应用HTML标准自1999年12月发布的HTML4.01后，后继的HTML5和其它标准被束之高阁，为了推动Web标准化运动的发展，一些公司联合起来，成立了一个叫做 Web Hypertext Application Technology Working Group （Web超文本应用技术工作组 -WHATWG） 的组织。WHATWG 致力于 Web 表单和应用程序，而W3C（World Wide Web Consortium，万维网联盟） 专注于XHTML2.0。在 2006 年，双方决定进行合作，来创建一个新版本的 HTML。
+HTML5草案的前身名为 Web Applications 1.0，于2004年被WHATWG提出，于2007年被W3C接纳，并成立了新的 HTML 工作团队。
+HTML 5 的第一份正式草案已于2008年1月22日公布。HTML5 仍处于完善之中。然而，大部分现代浏览器已经具备了某些 HTML5 支持。
+2012年12月17日，万维网联盟（W3C）正式宣布凝结了大量网络工作者心血的HTML5规范已经正式定稿。根据W3C的发言稿称：“HTML5是开放的Web网络平台的奠基石。”
+2013年5月6日， HTML 5.1正式草案公布。该规范定义了第五次重大版本，第一次要修订万维网的核心语言：超文本标记语言（HTML）。在这个版本中，新功能不断推出，以帮助Web应用程序的作者，努力提高新元素互操作性。
+本次草案的发布，从2012年12月27日至今，进行了多达近百项的修改，包括HTML和XHTML的标签，相关的API、Canvas等，同时HTML5的图像img标签及svg也进行了改进，性能得到进一步提升。
+支持Html5的浏览器包括Firefox（火狐浏览器），IE9及其更高版本，Chrome（谷歌浏览器），Safari，Opera等；国内的遨游浏览器（Maxthon），以及基于IE或Chromium（Chrome的工程版或称实验版）所推出的360浏览器、搜狗浏览器、QQ浏览器、猎豹浏览器等国产浏览器同样具备支持HTML5的能力。
+在移动设备开发HTML5应用只有两种方法，要不就是全使用HTML5的语法，要不就是仅使用JavaScript引擎。
+JavaScript引擎的构建方法让制作手机网页游戏成为可能。由于界面层很复杂，已预订了一个UI工具包去使用。
+纯HTML5手机应用运行缓慢并错漏百出，但优化后的效果会好转。尽管不是很多人愿意去做这样的优化，但依然可以去尝试。
+HTML5手机应用的最大优势就是可以在网页上直接调试和修改。原先应用的开发人员可能需要花费非常大的力气才能达到HTML5的效果，不断地重复编码、调试和运行，这是首先得解决的一个问题。因此也有许多手机杂志客户端是基于HTML5标准，开发人员可以轻松调试修改。
+2014年10月29日，万维网联盟泪流满面地宣布，经过几乎8年的艰辛努力，HTML5标准规范终于最终制定完成了，并已公开发布。
+在此之前的几年时间里，已经有很多开发者陆续使用了HTML5的部分技术，Firefox、Google Chrome、Opera、Safari 4+、Internet Explorer 9+都已支持HTML5，但直到今天，我们才看到“正式版”。
+HTML5将会取代1999年制定的HTML 4.01、XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到符合当代的网络需求，为桌面和移动平台带来无缝衔接的丰富内容。
+W3C CEO Jeff Jaffe博士表示：“HTML5将推动Web进入新的时代。不久以前，Web还只是上网看一些基础文档，而如今，Web是一个极大丰富的平台。我们已经进入一个稳定阶段，每个人都可以按照标准行事，并且可用于所有浏览器。如果我们不能携起手来，就不会有统一的Web。”
+HTML5还有望成为梦想中的“开放Web平台”(Open Web Platform)的基石，如能实现可进一步推动更深入的跨平台Web应用。
+接下来，W3C将致力于开发用于实时通信、电子支付、应用开发等方面的标准规范，还会创建一系列的隐私、安全防护措施。
+        </textarea><br/>        
+        <input type="checkbox" name="tiaokuan" onclick="enable()" class="chck" >我已阅读完条款<br/>
+        <input type="submit" value="注册" class="button" name="butt" onclick="doAction()" disabled/>
+    </form>
+    </div>
+    <div id="log">
+    <form name="myform" >
+        <h1>登录</h1>
+        账　　号：<input type="text" name="na"  placeholder="请输入账号" class="chang" required><br/>
+        密　　码：<input type="password" name="psd" placeholder="请输入密码" class="chang"><br/>
+        <button class="button" onclick="doAction1()">登录</button>
+   </form>
+    </div>
+    <div id="qqlog">
+    <form name="myform" >
+        <h1>QQ登录</h1>
+        账　　号：<input type="text" name="na"  placeholder="请输入账号" class="chang"><br/>
+        密　　码：<input type="password" name="psd" placeholder="请输入密码" class="chang"><br/>
+        <button class="button" onclick="doAction2()">登录</button>
+    </form>
+    </div>
+</aside>
+	<footer id="footer">
+	<div id="top">
+		<div class="block">
+		<h1>合作伙伴</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">途牛旅游网</a></li>
+			<li><a href="###">驴妈妈旅游网</a></li>
+			<li><a href="###">携程旅游</a></li>
+			<li><a href="###">中国青年旅行社</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>旅游FAQ</h1>
+		<hr/>
+		<ul>
+			<li><a href="###">旅游合作签订方式？</a></li>
+			<li><a href="###">儿童价是基于什么制定的？</a></li>
+			<li><a href="###">旅游的线路品质怎么界定的？</a></li>
+			<li><a href="###">单房差是什么？</a></li>
+			<li><a href="###">旅游保险有哪些种类？</a></li>
+		</ul>
+		</div>
+		<div class="block">
+		<h1>联系方式</h1>
+		<hr/>
+		<ul>
+			<li>微博：sonnylight@weibo.com</li>
+			<li>邮件：zhaoyongwei@zeny-express.com</li>
+			<li>地址：北京市朝阳区北京广播大厦</li>
+		</ul>
+		</div>
+	</div>
+	<div id="bottom">
+		<p>Copyright © <span>赵永卫</span> 国际旅行社|京ICP 备120150812 号|旅行社经营许可证：L YC BK12345</p>
+	</div>
+</footer>
+</body>
+</html>
