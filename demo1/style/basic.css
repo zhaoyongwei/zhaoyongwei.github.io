@@ -1,0 +1,218 @@
+@charset "utf-8";
+html{
+	font-size: 62.5%;
+}
+body,ul,li,h1,p,h2,input,figure{
+	margin:0;
+	padding:0;
+	border:none;
+	/*做项目时要清楚浏览器默认样式，比如input默认是有边框的，会影响布局*/
+}
+a{
+	text-decoration: none;
+}
+.back{
+	position: fixed;
+	bottom:1%;
+	right: 1%;
+	height: 37px;
+	width: 38px;
+	display: none;
+}
+.back img{
+	border:1px solid #4f7;	
+}
+.back img:hover{
+	border:1px solid #f47;
+}
+iframe{
+	position: absolute;
+	top:10px;
+	left:30px;
+	color: white;
+}
+#nav{
+	width:100%;
+	min-width: 1423px;/* 设置最低分辨率，为了让窗口缩放时通过滚动滚动条来显示全部页面*/
+	height:70px;
+	background:#444;
+	box-shadow: 0 1px 1px #000;
+}
+#nav .nav-sec{
+	width: 1423px;
+	margin:0 auto;
+}
+#nav .nav-sec h1{
+	font-size: 2rem;/* rem为根字体大小标准 62.5%即为10px*/
+	width:240px;
+	height:70px;
+	color:white;
+	text-align: center;
+	line-height:70px;
+	float:left;
+}
+#nav .nav-sec .link{
+	width:820px;
+	list-style: none;
+	float:right;
+}
+#nav .nav-sec .link li{
+	font-size: 1.6rem;
+	float:left;
+	height:70px;
+	width:110px;
+	text-align:center;
+	line-height: 70px;
+}
+#nav .nav-sec .link li a{
+	display: block;
+	color:white;
+}
+#nav .nav-sec .link>li em{
+	z-index:2;
+	display: block;
+	position:relative;
+	height: 0;
+	width: 0;
+	left: 55px;
+	background:red;
+}
+#nav .nav-sec .link>li a span{
+	position: relative;
+	top:15px;
+	height: 0;
+	width: 0;
+	border:1px solid #444;
+	border-width:10px 8px 0;
+	border-color: red #444;
+}
+#nav .nav-sec .link>li a:hover span{
+	top:-15px;
+	border-width:0 8px 10px;
+	border-color: red black;	
+}
+#nav .nav-sec .link li a:hover,
+#nav .nav-sec .link li.select a
+{
+    background:black;
+}
+#nav .nav-sec .link>li ul{
+	position: relative;
+	z-index:9999;
+	color:#f00;
+    height:343px;
+    width: 300px;
+    display: none;
+}
+#nav .nav-sec .link>li:hover ul{
+	display: block;
+	list-style: none;
+	text-indent: 40px;
+}
+#nav .nav-sec .link>li:hover ul li{
+	border-bottom: 1px solid #999;
+	width:300px;
+	height:42px;
+	line-height: 42px;
+	text-align: left;
+}
+#ggao{
+	height:360px;
+	width: 200px;
+	background:#eee;
+	position: fixed;
+	top:0;
+	left:10px;
+	z-index: 9999;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px #4e4;	
+}
+#ggao ul{
+	list-style: outside;
+}
+#ggao ul li{
+	width: 200px;
+    height:40px;
+    font-size:1.5rem;
+    text-align: left;
+    text-indent: 10px;
+    line-height: 40px;
+}
+#ggao ul li:nth-child(2n){
+	background:#999;
+}
+#ggao .getmore{
+	text-align: center;
+}
+#ggao a{
+	display: block;
+	color: #3f0;
+	font-weight: bold;
+}
+#ggao  a:hover{
+	background:#777;
+	color:white;
+}
+#ggao #close a{
+	color:#30f;
+	text-align: center;
+}
+#ggao #close a span{
+	color: red;
+	font-size: 20px;
+}
+#footer{
+	height:300px;
+	background:#666;
+	clear:both;
+}
+#footer #top{
+	height:240px;
+	width: 1200px;
+	margin:0 auto;
+	text-align: center;
+}
+#footer #top .block{
+	text-align: left;
+	width:400px;
+	height:240px;
+	float:left;
+}
+#footer #top .block a{
+	color:black;
+}
+#footer #top .block a:hover{
+	color:#aaa;
+}
+#footer #top .block h1{
+	font-weight: normal;
+	color:#777;
+	font-size: 2.5rem;
+	padding:10px 0 0 50px;
+}
+#footer #top .block hr{
+	width:80%;
+	border:1px solid #444;
+}
+#footer #top .block ul{
+    list-style: none;
+    font-size: 2rem;
+    text-indent: 50px;
+}
+#footer #top .block ul li{
+	padding:10px 0 0 0;
+}
+#footer #bottom{
+    height:60px;
+    background:black;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 60px;
+    color:#777;
+    border:1px dotted black;
+}
+#footer #bottom span{
+	color:rgb(150,0,0);
+	font-weight: bolder;
+}

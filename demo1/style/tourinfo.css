@@ -1,0 +1,710 @@
+@charset "utf-8";
+    html{
+        font-size: 62.5%;
+    }
+#main{
+	width: 100%;
+	min-width: 1423px;
+	height:300px;
+	background:url(../images/bg1.jpg) center no-repeat;
+}
+#main .center{
+	width:1423px;
+	margin:0 auto;
+}
+#main .center .hgroup{
+	padding:100px 0 0 100px;
+
+}
+#main .center .hgroup h1{
+	font-size: 3rem;
+	font-style: normal;
+	letter-spacing: 4px;
+	line-height: 4rem;
+	color: white;
+}
+#main .center .hgroup h2{
+	font-style: normal;
+	letter-spacing: 4px;
+	font-size: 2rem; 
+	color: white;   
+}
+aside{
+	margin: 0 auto;
+	width: 1420px;
+	height:1300px;
+	background: #f0f8ff;	
+}
+.asidebar{
+	height:1200px;
+	width: 350px;
+	float:right;
+	text-align: center;
+
+}
+.asidebar .hotplace{
+	border: 1px solid #eee;
+}
+.asidebar .hotplace h2{
+    padding:10px 0 5px 0 ;
+    text-align: left;
+    color: #777;    
+}
+.asidebar .hotplace hr{
+	border: 1px solid #eee;
+}
+.asidebar .hotplace li{
+	display: inline-block;	
+}
+.asidebar .hotplace a{
+	display: inline-block;
+	width: 100px;
+	height:30px;
+	line-height: 30px;
+	background:#bbb;
+	margin:3px 3px;
+	color:#777;
+}
+.asidebar .hotplace a:hover{
+	background:rgb(0,150,0);
+	color: white;
+}
+.asidebar .hotimg{
+	border: 1px solid #eee;
+}
+.hotimg #demo{
+  height: 200px;
+  width: 300px;
+  overflow: hidden;
+}
+.hotimg #demo ul{
+  width: 300px;
+  height: 400px;
+  padding: 0;
+  margin:0 0 0 10px;
+}
+.hotimg #demo ul li{
+  list-style: none;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: bold;
+  opacity: 0.6;
+}
+.hotimg #demo ul li a{
+	color:red;
+}
+.hotimg #demo ul li a:hover{
+	text-decoration: underline;
+	color: blue;
+}
+.asidebar .hotimg h2{
+    padding:10px 0 5px 0 ;
+    text-align: left;
+    color: #777;
+}
+.asidebar .hotimg hr{
+	border: 1px solid #eee;
+}
+.asidebar .hotimg figure{
+	display: inline-block;
+	padding:7px;
+}
+.asidebar .box{
+	border: 1px solid #eee;
+}
+.asidebar .box h2{
+    padding:10px 0 0 0 ;
+    text-align: left;
+    color: #777;
+}
+.asidebar .box hr{
+	border: 1px solid #eee;
+}
+.asidebar .box a{
+	display: inline-block;
+	width: 110px;
+	height:30px;
+	text-align: center;
+	line-height: 30px;
+	background:#bbb;
+	margin:5px 0 5px 35px;
+	color:#777;
+}
+.asidebar .box a:hover{
+	background:#555;
+	color: white;
+}
+
+/*注册登录css*/
+    .navg{
+        width: 1000px;
+        margin: 0 10px 0 0 ;
+        float: left;         
+    }
+    .navg h1{
+    	line-height: 50px;
+    	height: 50px;
+    	text-align: center;
+    	font-size: 3.5rem;
+    	color:#22bb33;
+    }
+    .navg ul{
+        width: 600px;
+        list-style: none;
+        height: 3rem;
+        border:1px solid #eee;
+        margin: 20px 0 0 212px;
+    }
+    .navg ul li{
+        float: left;
+        font-size: 1.6rem;
+        width: 200px;
+        text-align: center;
+        line-height: 3rem;
+        background:#eee;
+    }
+    .navg ul li:hover{
+        background:#999;
+        color:white;
+    }
+    .navg #normal{
+        background: #999;
+        color: white;
+    }
+    #reg{
+        width: 600px;
+        font-size: 2rem;
+        text-align: center;
+        position: absolute;
+        border:1px solid #eee;
+        margin: 0 auto; 
+        left:212px;
+        top:497px;  
+    }
+    #log{
+        width: 600px;
+        font-size: 2rem;
+        text-align: center;
+        position: absolute;
+        visibility: hidden;
+        border:1px solid #eee;  
+        margin: 0 auto;
+        left:212px;
+        top:497px;  
+    }
+    #qqlog{
+        width: 600px;
+        font-size: 2rem;
+        text-align: center;
+        position: absolute;
+        visibility: hidden;
+        border:1px solid #eee;
+        background:#f0f8ff;  
+        margin:0 auto;
+        left:212px;
+        top:497px;  
+    }
+    .button{
+        height: 2.2rem;
+        width: 4rem;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        vertical-align: middle;
+        cursor: pointer;
+        margin: 0 0 20px 0;
+        padding: 0 0 20px 0;
+    }   
+     input{
+        margin: 20px 0;
+        height: 30px;
+     }
+     .chck{
+        position: relative;
+        top:6px;
+     }
+     .area{
+     	resize:none;
+     	overflow-y:scroll;
+     }
+     .chang{
+     	width: 250px;
+     	height:40px;
+     }
+
+/* tourinfo list css */
+#list{
+	position: relative;
+	height:1200px;
+	width: 1010px;
+	float:left;	
+}
+#list .contain{
+	width:900px;
+	height:40px;
+	margin: 0 auto;
+	background: #eee;
+}
+#list .contain ul{
+	list-style: none;
+}
+#list .listleft{
+	display: inline-block;
+	float:left;
+}
+#list .listleft li{
+	float:left;
+	font-size: 2rem;
+    height: 40px;
+    width:120px;
+    line-height: 40px;
+    text-align: center;
+}
+#list .listleft li.select{
+	background: white;
+	border-top:1px solid green;
+	position: relative;
+	left:1px;
+}
+#list .listleft li a{
+	display: block;
+	color:#999;
+}
+#list .listleft li a:hover{
+	background:white;
+	color:black;
+	border-top: 1px solid green;
+}
+#list .listright{
+	display: inline-block;
+	float: right;
+}
+#list .listright ul li{
+	display: inline-block;
+	font-size: 2rem;
+	width:70px;
+	height:40px;
+	text-align: center;
+	line-height: 40px;
+}
+#list .listright ul li a{
+	color:#999;
+}
+#list .listright ul li .select{
+	background:green;
+}
+#list .listright ul li a:hover{
+	background:green;
+	color:white;	
+}
+.tour{
+	width:910px;
+	height:300px;
+	float:left;
+    border: 1px solid #eee;
+	margin:20px 0 0 55px;
+}
+.tour .jieshao{
+	width:500px;
+	height:auto;
+    position: relative;
+	float:right;
+}
+.tour .jieshao h2{
+	font-size: 3rem;
+	font-style: normal;
+	color: #666;
+	padding:5px 0 0 10px;
+}
+.tour .jieshao .txt{
+	width:300px;
+}
+.tour .jieshao .txt h3{
+	font-size: 2rem;
+	font-style: normal;
+	color:#aaa;
+	padding:5px 0 0 10px;
+}
+.tour .jieshao .txt ul{
+	list-style: none;
+	text-indent: 10px;
+}
+.tour .jieshao .txt ul li{
+	font-size: 1.5rem;
+	letter-spacing: 2px;
+	padding:10px 0;
+}
+.tour .jieshao .txt .jiage{
+	position: absolute;
+	right:30px;
+	bottom: 180px;
+}
+.tour .jieshao .txt .jiage em{
+	font-style: normal;
+	font-size: 2.5rem;
+	color: red;
+}
+.tour .jieshao .txt mark{
+	display: inline-block;
+	text-align: center;
+	text-indent: 0;
+	width: 47px;
+	background:white;
+	color: #58d450;
+	border-radius: 25px;
+	border: 1px solid #58d450;
+}
+.tour .jieshao .txt .button a{
+	position: absolute;
+	right:30px;
+	bottom: 130px;
+	display: block;
+	width:100px;
+	height:40px;
+	color: #fff;
+	background:#f88;
+	text-align: center;
+	line-height: 40px;
+	font-size: 1.7rem;
+}
+.tour .jieshao .txt .button a:hover{
+	background:#f30;
+}
+.tour .jieshao footer{
+	position: absolute;
+	bottom:15px;
+    right:150px;
+    font-size: 1.5rem;
+    color: #aaa;
+}
+.tour .jieshao .type{
+	width:75px;
+	height:20px;
+	position: absolute;
+	background:green;
+	top:0;
+	left:-410px;
+	font-size: 1.5rem;
+	color:white;
+	text-align: center;
+	line-height: 2rem;
+}
+.tour .jieshao .dazhe span{
+	display: block;
+	font-size: 1.8rem;
+	width:50px;
+	height:20px;
+	-webkit-transform: rotate(45deg);
+	position: absolute;
+	top:20px;
+	right:0;
+	color: red;
+	font-weight: bolder;
+}
+#list .more a{
+	display: block;
+	position: absolute;
+	width:100px;
+	height:40px;
+	background:#aaa;
+	bottom:50px;
+	left:500px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 1.6rem;
+	cursor:pointer;
+	border-radius: 8px;
+}
+#list .more a:hover{
+	background:#666;
+	color: white;
+}
+/* tickets css*/
+.list{
+	width:1020px;
+	float: left;
+}
+.list .reserve h1{
+	text-align: left;
+	font-size: 2.4rem;
+	color:#999;
+	padding:3px 0;
+}
+.list p{
+	line-height: 3;
+	font-size: 1.7rem;
+	color: #999;
+	font-weight: bold;
+}
+.list .button a{
+	position: relative;
+	left:900px;
+	display: block;
+	width:100px;
+	height:40px;
+	color: #fff;
+	background:#aaa;
+	text-align: center;
+	line-height: 40px;
+	font-size: 1.7rem;
+}
+.list .button a:hover{
+	background:#666;
+	color: white;
+}
+.list form input{
+	width:200px;
+	height:30px;
+	border: 1px solid #999;
+	border-radius:4px;
+	color:#666;
+	margin:0 0 0 15px;
+}
+.list h2{
+	text-align: left;
+	font-size: 2.4rem;
+	color:#999;
+	padding:30px 0 5px 0;
+}
+.list hr{
+	border: 1px dotted #eee;
+}
+.list .country ul{
+	margin:15px 0;
+}
+.list .country ul li{
+    display: inline-block;
+    width:50px;
+    height:30px;
+    font-size: 1.5rem;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bolder;
+    color: #888;
+}
+.list .country ul li:first-child{
+	    width:100px;
+}
+.list .country ul li:nth-child(2){
+	background:#00aa00;
+	color: white;
+}
+.list .ticketinfo .hidden{
+	display: none;
+}
+.list .ticketinfo table{
+	width:90%;
+	text-align: center;
+    border:1px solid #eee;
+    margin: 0 0 0 30px;
+    border-collapse: collapse;
+}
+.list .ticketinfo table tr{
+	font-size: 2rem;
+	height:50px;
+}
+.list .ticketinfo table tr:nth-child(2n){
+		background:#eee;
+}
+.list .ticketinfo table tr td{
+	border-top: 1px solid #eee;
+}
+.list .ticketinfo table tr:hover{
+	background:#999;
+}
+.list .ticketinfo .price{
+	font-weight: bold;
+	color:#009900;
+}
+.list .ticketinfo .yuding{
+	display: block;
+	height:50px;
+	font-size: 2rem;
+	line-height: 50px;
+    background:#f30;
+}
+.list .ticketinfo .yuding:hover{
+	background:#f00;
+	cursor: pointer;
+	color: white;
+}
+.list .ticketinfo .more:hover{
+	cursor:pointer;
+	color: white;
+}
+/* secnery css*/
+.scenery{
+	width:1000px;
+	margin:0 0 0 20px;
+}
+.scenery h1{
+	text-align: left;
+	font-size: 2.4rem;
+	color:#999;
+	padding:3px 0;
+}
+.scenery hr{
+	border: 1px dotted #eee;
+}
+.scenery figure{
+	margin: 10px 0 0 50px;
+	width:400px;
+	text-align: center;
+	float:left;
+}
+.scenery figure figcaption{
+    font-size: 1.6rem;
+    padding:5px 0;
+}
+/* 图片轮播*/
+
+
+.imgbox{
+	width:400px;
+	height:300px;
+	float:left;
+	margin: 10px 0 0 50px;
+}
+.imgbox img{
+	width:400px;
+	height:300px;	
+}
+.imgbox ul{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+.imgbox ul li{
+	display:none;
+}
+.title_bg{
+	z-index:1;
+	background-color:#000;
+	filter:alpha(opacity=30);
+	-moz-opacity:0.3;
+	opacity:0.3;
+}
+.title{
+	z-index:2;
+	color:#FFF;
+	text-indent:10px;
+	font-size:14px;
+	line-height:40px;
+}
+.pager{
+	z-index:3;
+}
+.common{
+	position:relative;
+	height:40px;
+	margin-top:-43px;
+}
+.pager ul{
+	margin-top:5px;
+}
+.pager ul li{
+	float:right;
+	color:#FFF;
+	font-size:15px;
+	display:block;
+	border:2px solid #e5eaff;
+	width:25px;height:25px;
+	margin-right:4px;
+	margin-top:5px;
+	text-align:center;
+	line-height:25px;
+	background-color:#6f4f67;
+	cursor:pointer;
+}
+
+
+.about h1{
+	text-align: center;
+	font-size: 2.4rem;
+	color:#999;
+	padding:3px 0;
+	color:#00cc00;
+	font-weight: bold;
+}
+.about hr{
+	border: 1px dotted #eee;
+}
+.about table{
+	border-collapse: collapse;
+	border: 1px solid #999;
+	margin:10px 0 20px 200px;
+}
+.about table thead{
+	font-size: 2rem;
+}
+.about tr{
+	font-size: 1.6rem;
+    text-align: center;
+	border-top: 1px solid #999;
+}
+.about td,.about th{
+    width:100px;
+    padding:5px 0;
+    border-right:1px solid #999;
+}
+.about p{
+	font-size: 1.8rem;
+	line-height: 25px;
+	padding:10px;
+	letter-spacing:2px;
+	text-indent: 20px;
+}
+.about ul{
+    text-indent: 250px;
+    margin:0 0 0 20px;
+    list-style: inside;
+}
+.about .heihei{
+	list-style: square;
+	list-style: inside;
+}
+.about ul li{
+	font-size: 2rem;
+	padding:10px 0;
+}
+
+  .navbar{
+    height: auto;
+    width: 1000px;
+  }
+  .navbar h1{
+  	width: 200px;
+  	margin: 0 auto;
+    font-size: 20px;
+    background: #e64;
+  }
+  .tit{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 15px;
+    line-height: 25px;
+    cursor: pointer;
+  }
+  .navbar span{
+  	display: inline-block;
+    border:1px solid black;
+    height: 10px;
+    width: 10px;
+    text-align: center;
+    line-height: 10px;
+    margin:20px 10px 0 50px;
+    cursor: pointer;
+  }
+  .navbar em{
+  	font-style: normal;
+  	font-size: 16px;
+  	color: red;
+  }
+  .navbar hr{
+    width: 900px;
+    border: none;
+    border-top: 1px dashed #bbb;
+    margin: 20px 0 0 50px;
+  }
