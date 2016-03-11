@@ -1,6 +1,6 @@
 <?php
 $q=$_GET["qqq"];
-if (strlen($q)>0){
+if ((strlen($q))> 0 ){
     $a=array("人","人生","Anna","Brittany","Cinderella","Diana","Eva","Fiona","Gunda","Hege","Inga","Johanna"
     ,"Kitty","Linda","Nina","Ophelia","Petunia","Amanda","Raquel","Cindy","Doris","Eve"
     ,"Evita","Sunniva","Tove","Unni","Violet","Liza","Elizabeth","Ellen","Wenche","Vicky","人生在于奋斗","赵薇","赵永卫","赵珂","php","python","html","xhtml");  
