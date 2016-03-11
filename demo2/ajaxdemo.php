@@ -23,7 +23,7 @@ if (strlen($q) > 0)
   }
 if ($data == "")//没有匹配上
   {
-   $response="no suggestion";
+   $response="查不到数据";
   }
 else
   {
