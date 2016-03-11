@@ -1,0 +1,686 @@
+@charset "utf-8";
+html{
+	font-size:62.5%;
+	font-family:Microsoft Yahei,幼圆,方正姚体,宋体;
+}
+/*CSS样式初始化*/
+body,div,dl,dt,dd,ul,ol,hr,li,h1,h2,h3,h4,h5,h6,input,p,th,td,span,nav,article,img,figure,figcaption{
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+ol,ul,dl {
+	list-style:none;
+}
+a{
+	color:#666;
+	text-decoration:none;
+}
+/*内容样式*/
+.head{
+	width: 100%;
+	height: 180px;
+	background:#eaeaea;	
+	margin: 0 auto;
+}
+.img{
+	display: inline-block;
+	float: left;
+	width:12.5%;
+}
+.head .search{
+    width:60%;
+    float: left;
+    position: relative;
+    top:40%;
+    text-align: center;
+}
+.head .search input{
+	background:white;
+	border: 1px solid #929993;
+	border-radius: 1px;
+}
+.head .search span{
+	display: inline-block;
+	background:#e1e1e1;
+	text-align: center;
+}
+.head .search span:hover{
+	background: #bbb;
+	cursor: pointer;
+}
+.head .list{
+    width:27.5%;
+    float:right;
+    position: relative;
+    top:40%;
+}
+.head .list ul{
+	width: 100%;
+	height: 30px;
+}
+.head .list ul li{
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	float: left;
+	font-size: 1.5rem;
+}
+.head .list ul li a:hover{
+	text-decoration: underline;
+	color: red;
+}
+.head .list ul li img{
+	font-size: 2rem;
+}
+.head .list ul li.qq{
+	width:20%;
+	text-align:right;	
+}
+.head .list ul li.qq a{
+	padding:0 20px 0 0;
+}
+.head .list ul li.wei{
+	width: 20%;
+	text-align:center;
+}
+.head .list ul li.wei a{
+	padding:0 0 0 10px;
+}
+.head .list ul li.normal{
+	width: 25%;	
+	text-align: right;
+	font-size: 2rem;
+}
+nav{
+	width: 100%;
+	background:red;
+}
+nav ul{
+	width: 80%;
+	margin: 0 auto;
+}
+nav ul li{
+    float: left;
+    width: 12.5%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+nav>ul li span{
+	font-size: 2rem;
+	color:#e1e2e3; 
+}
+nav>ul>li:hover{
+	background: #e1e2e3;
+	cursor: pointer;
+}
+.type{
+	width: 1000px;
+	background:#e1e2e3; 
+	border:1px solid #e1e2e3;
+	opacity: 0.9;
+	z-index: 9999;
+	position:relative;
+}
+.display{
+	display:none;
+}
+.back{
+	position: fixed;
+	bottom: 2%;
+	right: 2%;
+	height: 37px;
+	width: 38px;
+	z-index: 5;
+	display: none;
+}
+.back img{
+	border:1px solid #4f7;	
+}
+.back img:hover{
+	border:1px solid #f47;
+}
+.type dt{
+	color: red;
+	text-align: left;
+	height: 25px;
+	width: 100px;
+	line-height: 25px;
+	font-size: 2.5rem;
+    margin: 10px 0 0 20px;
+}
+.type dt:hover{
+	background: red;
+	color: white;
+}
+.type dd{
+	display: inline-block;
+	float: left;
+	margin: 20px 0 20px 20px;
+	font-size: 1.5rem;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	color:#333;
+}
+.type dd:hover{
+	background: red;
+	color: white;
+}
+.type ul{
+	width:100%;
+	height: 100px;
+}
+.type ul li{
+	width: 50%;
+	display: inline-block;
+}
+nav ul li.select{
+	border-top: 2px solid #ee0000;
+}
+.clear{
+	clear: both;
+}
+.contain{
+	width: 100%;
+	background:#fae8c8;
+	margin: 0 auto;
+	position: relative;
+}
+.contain h1{
+	text-align: center;
+	font-size: 2.5rem;
+	padding: 20px 0 0 0;
+}
+.view{
+    width: 80%;
+	position: relative;
+	margin: 0 0 0 11%;
+	z-index: 2;
+}
+.view a:hover{
+    text-decoration: underline;
+    color: red;
+}
+.view figure{
+	width: 30%;
+	border:1px solid #bbb;
+	float: left;
+	margin:1% 1.4% 1% 1%;
+}
+.view figure img{
+	display: block;
+	width: 100%;
+}
+.view figure figcaption{
+	background: white;
+}
+.view figure figcaption dt{
+	font-size: 2rem;
+	padding: 10px 0 0 10px;
+}
+.view figure figcaption dd{
+    font-size: 1.4rem;
+    color: #bbb;
+    padding: 10px 0 10px 10px;
+}
+.flag{
+	position:absolute;
+	left:45%;
+}
+.flag ul li{
+	float: left;
+	cursor: pointer;
+	font-size: 3rem;
+	margin: 30px 20px;
+	color: #999;
+}
+.flag .red{
+	color:red;
+}
+.food{
+	width: 76%;
+	background:white;
+	margin: 0 auto;
+	height: 240px;
+	border:2rem solid #fae8c8;;
+	position: relative;
+}
+.food .green{
+	background:#119911;
+	color: white;
+}
+.food ul{
+	width: 100%;
+	height: 50px;
+	padding: 2rem 0 0 3rem;
+}
+.food ul li{
+	float: left;
+	font-size: 1.7rem;
+	padding: 0.5rem 0.8rem;
+	background: white;
+}
+.food figure{
+	float: left;
+	width: 14%;
+}
+.food figure img{
+	width: 100%;
+}
+.foodname{
+	position: absolute;
+	width: 100%;
+	bottom:1%;
+}
+.foodname ul{
+    padding: 0;
+    list-style:square;
+    list-style: inside;
+}
+.foodname ul li{
+	position: relative;
+	top:30%;
+	vertical-align: bottom;
+	float: left;
+	width: 14%;
+	font-size: 2rem;
+	text-align: left;
+	opacity: 0.5;
+	padding: 0;
+}
+.foodlist{
+	position:absolute;
+}
+.news{
+	position: relative;
+	float: left;
+	width: 76%;
+	margin: 0 0 0 12%;
+
+}
+.news h2{
+	margin: 2% 0;
+	font-size: 3rem;
+	color:#80e88f;	
+}
+.news .info{
+	width: 50%;
+	float: left;
+	padding: 2% 0;
+	position: relative;
+}
+.info img{
+	position: absolute;
+	display: block;
+	width: 33%;
+}
+.info .index{
+	width: 67%;
+	float: right;
+}
+.info .index p{
+    padding: 4.5%;
+	font-size: 1.6rem;
+}
+.info .index p a.red{
+	color: red;
+}
+.info .index p a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.info .index hr{
+	border:1px solid #eee;
+}
+footer{
+	width: 100%;
+    margin: 2rem 0;	
+    background: #666;
+}
+.main{
+	width: 76%;
+	margin: 0 12%;
+}
+.main dl{
+	border-bottom: 1px solid #888;
+}
+.main dl dt{
+	padding:15px 0;
+	color: white;
+	font-size: 1.6rem;
+	border-bottom: 1px solid #888;
+}
+.main dl dd{
+	display: inline-block;
+	width: 10%;
+	padding: 10px;
+}
+.main hr{
+	border:1px solid #eee;
+}
+.main dl dd a{
+	color:#bbb;	
+}
+.main dl dd a:hover{
+	text-decoration: underline;
+	color:#ee2222;
+}
+.know{
+    width: 76%;
+	margin: 0 12%;
+}
+.know ul{
+	width: 80%;
+	margin:0 10%;
+	padding: 20px 0;
+}
+.know ul li{
+	float: left;
+	width: 10%;
+}
+.know ul li a {
+	display: block;
+	color: #bbb;
+	text-align: center;
+}
+.know ul li a:hover{
+	background: red;
+	text-align: center;
+	color: white;
+}
+.know p{
+	width: 80%;
+	margin:0 10%;
+	color: #888;
+	text-align: center;
+	padding: 10px 0;
+}
+.know em{
+	font-style: normal;
+}
+
+/*响应式媒体查询*/
+@media(min-width:1441px){
+.img{
+    display: none;
+	}
+.head .search{
+	width: 72.5%;
+	float: left;
+    position: relative;
+    top:40%;
+    text-align: center;
+}
+.head .search input{
+	height: 2.5rem;
+	width: 25rem;
+}
+.head .search span{
+	height: 2.5rem;
+	width: 50px;
+	text-align: center;
+	line-height: 2.5rem;
+}
+}	
+
+@media(min-width:1200px) and (max-width:1440px){
+.head .search input{
+	height: 40px;
+	width: 300px;
+	font-size: 1.5rem;
+}
+.head .search span{
+	height: 40px;
+	width: 50px;
+	text-align: center;
+	line-height: 40px;
+}
+}	
+
+@media(min-width:992px) and (max-width:1199px){
+.head{
+	height:140px;
+}
+.head .search input{
+	height: 40px;
+	width: 250px;
+}
+.head .search span{
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	line-height: 35px;
+}
+nav ul li{
+	width:15%;
+	font-size: 2.3rem;
+}
+nav .hidden{
+	display: none;
+}
+.flag ul li{
+	margin: 20px 15px;
+	font-size: 2.5rem;
+}
+.view figure figcaption dt{
+	font-size: 1.8rem;
+	padding: 8px 0 0 8px;
+}
+.view figure figcaption dd{
+    font-size: 1.2rem;
+    color: #bbb;
+    padding: 8px 0 8px 8px;
+}
+.info .index p{
+	padding: 4.5%;
+	font-size: 1.4rem;
+}
+.foodname ul li{
+	font-size: 1.6rem;
+	top:40%;
+}
+.know em{
+	display: none;
+}
+.know a,.main a{
+	font-size: 1.4rem;
+}
+.back{
+	bottom: 3%;
+	right: 3%;
+	height: 20px;
+	width: 20px;
+}
+}
+@media(min-width:768px) and (max-width:991px){
+.head{
+	height:120px;
+}
+.head .search input{
+	height: 30px;
+	width: 200px;
+}
+.head .search span{
+	height: 30px;
+	width: 35px;
+	text-align: center;
+	line-height: 30px;
+}
+nav ul li{
+	width:15%;
+	font-size: 2rem;
+}
+nav .hidden,nav .type,nav span{
+	display: none;
+}
+.flag ul li{
+	margin: 20px 15px;
+	font-size: 2.5rem;
+}
+.view figure figcaption dt{
+	font-size: 1.6rem;
+	padding: 6px 0 0 16px;
+}
+.view figure figcaption dd{
+    font-size: 1.2rem;
+    color: #bbb;
+    padding:6px 0 6px 6px;
+}
+.info .index p{
+	padding: 4.5%;
+	font-size: 1.2rem;
+}
+.foodname ul li{
+	font-size: 1.2rem;
+	top:50%;
+}
+.know em{
+	display: none;
+}
+.know a,.main a{
+	font-size: 1rem;
+}
+.know p{
+	display: none;
+}
+.main dl dt{
+	font-size: 1.4rem;
+}
+.back{
+	bottom: 5%;
+	right: 5%;
+	height: 10px;
+	width: 10px;
+}			
+}
+@media (min-width:600px) and (max-width:767px){
+.head{
+	height:90px;
+}
+.head .search input{
+	height: 28px;
+	width: 180px;
+}
+.head .search span{
+	height: 28px;
+	width: 30px;
+	text-align: center;
+	line-height: 28px;
+}
+nav ul li{
+	width:18%;
+	font-size:1.8rem;
+}
+nav .hidden,nav .type,nav .mintime,nav span{
+	display: none;
+}
+.flag ul li{
+	margin: 15px 10px;
+	font-size: 2rem;
+}
+.view figure figcaption dt{
+	font-size: 1.4rem;
+	padding: 4px 0 0 12px;
+}
+.view figure figcaption dd{
+    font-size: 0.8rem;
+    color: #bbb;
+    padding:4px 0 4px 4px;
+}
+.info .index p{
+	padding: 4%;
+	font-size: 0.5rem;
+}
+.foodname ul li{
+	font-size: 1rem;
+	top:50%;
+}
+.know em,.know p{
+	display: none;
+}
+.main dl dt{
+	font-size: 1.2rem;
+}
+.back{
+	position: fixed;
+	bottom: 8%;
+	right: 8%;
+	height: 5px;
+	width: 5px;
+}	
+}
+@media (min-width: 540px) and (max-width:599px){
+.head{
+	height:90px;
+}
+.head .search input{
+	height: 28px;
+	width: 180px;
+}
+.head .search span{
+	height: 28px;
+	width: 30px;
+	text-align: center;
+	line-height: 28px;
+}
+.head .list ul li.normal{
+	width: 25%;	
+	text-align: right;
+	font-size: 1.5rem;
+}
+nav ul li{
+	width:18%;
+	height: 30px;
+	line-height: 30px;
+	font-size:1.5rem;
+}
+nav .hidden,nav .type,nav .mintime,nav span{
+	display: none;
+}
+.contain h1{
+	text-align: center;
+	font-size: 2rem;
+	padding: 20px 0 0 0;
+}
+.food{
+	width: 76%;
+	background:white;
+	height: 170px;
+}
+.news h2{
+	font-size: 1.6rem;
+}
+.flag ul li{
+	margin: 15px 10px;
+	font-size: 2rem;
+}
+.view figure figcaption dt{
+	font-size: 1.4rem;
+	padding: 4px 0 0 12px;
+}
+.view figure figcaption dd{
+    font-size: 0.8rem;
+    color: #bbb;
+    padding:4px 0 4px 4px;
+}
+.info .index p{
+	padding:2% 0 2% 0;
+	font-size: 0.4rem;
+}
+.foodname ul li{
+	font-size: 1rem;
+	top:50%;
+}
+.know em,.know p{
+	display: none;
+}
+.main dl dt{
+	font-size: 1.2rem;
+}
+.back a{
+    display: none;
+}
+}
