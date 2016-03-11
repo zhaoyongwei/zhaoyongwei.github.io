@@ -32,8 +32,9 @@ else
 $str = explode(",",$response);
 $length=sizeof($str);
 for($j=0;$j<$length;$j++){
-echo <<< ETO
-    <p onclick="get$j()">$str[$j]</p>
-ETO;
+// echo <<< ETO
+//     <p onclick="get$j()">$str[$j]</p>
+// ETO;
+  echo "nihao";
 }
 ?>
