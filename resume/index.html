@@ -83,6 +83,53 @@ $(document).ready(function() {
 			<hr/>
 			<p id="header_p2">个人简历</p>
 		</div>
+		
+	  <div class="watch">
+        <div class="view_hour"> 
+		    <div class="bg">   <!-- 背景-->
+		    </div>
+		    <div class="view_right"> <!-- 右边遮盖层-->
+		        
+		    </div>
+		    <div class="view_left">
+		        <div class="left_front"> <!-- 左边遮盖层-->
+		            
+		        </div>
+		    </div>
+		    <div class="hour">  <!-- 秒数-->
+		    </div>
+		</div>
+		<div class="view_minute"> 
+		    <div class="bg">   <!-- 背景-->
+		    </div>
+		    <div class="view_right"> <!-- 右边遮盖层-->
+		        
+		    </div>
+		    <div class="view_left">
+		        <div class="left_front"> <!-- 左边遮盖层-->
+		            
+		        </div>
+		    </div>
+		    <div class="minute">  <!-- 秒数-->
+		    </div>
+		</div>
+
+		<div class="view_second"> 
+		    <div class="bg">   <!-- 背景-->
+		    </div>
+		    <div class="view_right"> <!-- 右边遮盖层-->
+		        
+		    </div>
+		    <div class="view_left">
+		        <div class="left_front"> <!-- 左边遮盖层-->
+		            
+		        </div>
+		    </div>
+		    <div class="second">  <!-- 秒数-->
+		    </div>
+		</div>
+    </div>
+		
 	  <div class="color">
 	    <ul>
 	      <li class="color1">✔</li>
@@ -104,6 +151,21 @@ $(document).ready(function() {
 	<div class="home">
 		<img src="images/1.jpg" class="first"/>
 		<img src="images/2.jpg" class="second"/>
+		
+		<div class="view_rotate">
+			<div class="contain_rotate">
+				<div class="section_rotate"><span>PHP</span></div>
+				<div class="section_rotate"><span>Mysql</span></div>
+				<div class="section_rotate"><span>HTML5</span></div>
+				<div class="section_rotate"><span>CSS3</span></div>
+				<div class="section_rotate"><span>Jquery</span></div>
+				<div class="section_rotate"><span>Javascript</span></div>
+				<div class="section_rotate"><span>AJAX</span></div>
+				<div class="section_rotate"><span>Bootstrap</span></div>
+				<div class="section_rotate"><span>Angular</span></div>
+			</div>
+	   </div>
+		
 		<div class="word">不困于心，不乱于情，不念过去，不畏将来<hr/></div>
 		<div class="info">
 			<p>姓名 : 赵永卫</p>
@@ -270,5 +332,23 @@ $(document).ready(function() {
 		<p>京ICP备16030105号 Copyright©<b>赵永卫</b></p>
 	</div>      
 </div>
+<script>
+	$(function(){
+		$("#menu li").click(function(){
+		      $(".watch").hide();
+		    })
+		    $("#menu li:nth-child(1)").click(function(){
+		      $(".watch").show();
+		    })
+		document.onmousewheel=function(){
+             if($("#menu li:nth-child(1)").hasClass("active")){
+             	$(".watch").show();
+             }
+             else{
+             	$(".watch").hide();
+             }
+		}
+	})
+</script>
 </body>
 </html>
