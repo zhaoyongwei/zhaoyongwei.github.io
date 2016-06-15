@@ -26,6 +26,7 @@ a{
     top:0;
     z-index: 3;
     opacity: 0.8;
+    overflow:hidden;
 }
 #header img{
     display: inline-block;
