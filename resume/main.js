@@ -1,6 +1,84 @@
 
 $(document).ready(function(){
 
+var speed=1;
+        function move(){
+            $(".contain_rotate").css("transform","rotateX("+speed+"deg)");
+            speed++;
+            if(speed==360){speed=0}
+        }
+        var timer=setInterval(move,20);
+        $(".section_rotate span").hover(function(){
+           // clearInterval(timer);
+           $(this).addClass("select");
+        },function(){
+           // timer=setInterval(move,20);
+           $(this).removeClass("select");
+        })
+
+function timer1(){ 
+             var date=new Date();
+             var hour=date.getHours();
+             var minute=date.getMinutes();
+             var second=date.getSeconds();
+             //init
+             $(".hour").html(hour+"时");
+             $(".minute").html(minute+"分");
+             //判断
+             if(0<=hour&&hour<12){
+            //hour
+               $(".view_hour .left_front").css("transform","rotateZ(0deg)"); //左边不转
+               $(".view_hour .view_right").show(); //右边转
+               $(".view_hour .second").html("0"+hour+"时");;
+               if(0<=hour&&hour<10){$(".view_hour .hour").html("0"+hour+"时");}
+               $(".view_hour .view_right").css("transform","rotateZ(0)"); 
+               $(".view_hour .view_right").css("transform","rotateZ("+(hour+1)*15+"deg)");   //右边转的规律
+             }                     
+             if(12<=hour&&hour<24){
+            //hour
+                $(".view_hour .hour").html(hour+"时");
+                $(".view_hour .view_right").css("transform","rotateZ(0deg)"); //右边保持固定位置不转
+                $(".view_hour .view_right").hide();
+                $(".view_hour .left_front").css("transform","rotateZ("+(hour-11)*15+"deg)"); //左边转的规律
+              } 
+
+             if(0<=minute&&minute<30){
+            //minute
+               $(".view_minute .left_front").css("transform","rotateZ(0deg)"); //左边不转
+               $(".view_minute .view_right").show(); //右边转
+               $(".view_minute .second").html(minute+"分");
+               if(0<=minute&&minute<10){$(".view_minute .minute").html("0"+minute+"分");}
+               $(".view_minute .view_right").css("transform","rotateZ(0)"); 
+               $(".view_minute .view_right").css("transform","rotateZ("+(minute+1)*6+"deg)");   //右边转的规律
+             }                     
+             if(30<=minute&&minute<60){
+            //minute
+                $(".view_minute .minute").html(minute+"分");
+                $(".view_minute .view_right").css("transform","rotateZ(0deg)"); //右边保持固定位置不转
+                $(".view_minute .view_right").hide();
+                $(".view_minute .left_front").css("transform","rotateZ("+(minute-29)*6+"deg)"); //左边转的规律
+              }   
+
+             if(0<=second&&second<30){
+            //second
+               $(".view_second .left_front").css("transform","rotateZ(0deg)"); //左边不转
+               $(".view_second .view_right").show(); //右边转
+               $(".view_second .second").html(second+"秒");
+               if(0<=second&&second<10){$(".view_second .second").html("0"+second+"秒");}
+               $(".view_second .view_right").css("transform","rotateZ(0)"); 
+               $(".view_second .view_right").css("transform","rotateZ("+(second+1)*6+"deg)");   //右边转的规律
+             }                     
+             if(30<=second&&second<60){
+            //second
+                $(".view_second .second").html(second+"秒");
+                $(".view_second .view_right").css("transform","rotateZ(0deg)"); //右边保持固定位置不转
+                $(".view_second .view_right").hide();
+                $(".view_second .left_front").css("transform","rotateZ("+(second-29)*6+"deg)"); //左边转的规律
+              }
+              setTimeout(timer1,1000);         
+         }
+         timer1();
+
     $("nav ul li").hover(function(){
         $("em",this).css("height","1px");
         $("em",this).animate({
