@@ -7,7 +7,7 @@ body,ul,li,h1,p,h2,input,figure,img,fieldset,h1,table,tr,td{
     padding:0;
     border:none;
     list-style: none;
-    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family:'微软雅黑','Helvetica Neue',Helvetica,Arial,sans-serif;
     /*做项目时要清除浏览器默认样式，比如input默认是有边框的，会影响布局*/
 }
 body{
