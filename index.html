@@ -4,7 +4,7 @@
     <title>个人博客</title>
     <style>
     body{
-      background:url(images/404.jpg) no-repeat;
+      /*background:url(images/404.jpg) no-repeat;*/
       height:100%;
     }
       h1{
@@ -29,6 +29,7 @@
     </style>
   </head>
 <body>
+  <canvas id="myCanvas" style="background:#f0ffff;position:absolute;"></canvas>
   <h1>github博客建设中，请移步至本人chinaUnix博客</h1>
   <a href="https://github.com/zhaoyongwei/zhaoyongwei.github.io">1、个人GitHub</a><span>--2015/12/18</span>
   <br/>
@@ -43,5 +44,136 @@
   <a href="http://zhaoyongwei.github.io/bootstrap/">6、响应式布局--基于bootstrap框架实现的页面</a><span>--2016/3/22</span>
   <br/>
   <a href="http://zhaoyongwei.github.io/bootstrap/">7、响应式布局--基于bootstrap框架实现的页面（未上传)</a><span>--2016/4/2</span>
+<script>
+     var c=document.getElementById('myCanvas');
+     var ctx=c.getContext('2d');
+     var dots=[];   //粒子数组
+     var c_flag=0;   //判断鼠标进入和移出
+     var dotN=300; //页面粒子个数
+     var Mx,My;   //鼠标坐标
+     c.width=document.body.clientWidth||window.innerWidth || document.documentElement.clientWidth;  //兼容浏览器
+     c.height=document.body.clientHeight||window.innerHeight || document.documentElement.clientHeight;
+     window.onresize=function(){
+     	c.width=document.body.clientWidth||window.innerWidth || document.documentElement.clientWidth;
+        c.height=document.body.clientHeight||window.innerHeight || document.documentElement.clientHeight;
+     }   //适应缩放窗口事件
+     ctx.fillStyle="black";
+     for(var i=0;i<dotN;i++){            //生成粒子数组
+     	var dotX=Math.random()*c.width;
+     	var dotY=Math.random()*c.height;
+     	var xp=(Math.random()*2-1)/1.5;
+     	var yp=(Math.random()*2-1)/1.5;
+        dots.push({dotX,dotY,xp,yp})       //等价于dots.push({dotX:dotX,dotY:dotY,xp:xp,yp:yp})
+     }
+     function dotM(){   
+     	ctx.clearRect(0,0,c.width,c.height);
+    	for(var i=0;i<dotN;i++){
+    	var dot=dots[i];
+    	dot.dotX+=dot.xp;
+    	dot.dotY+=dot.yp;
+    	ctx.fillRect(dot.dotX,dot.dotY,1,1);  //画粒子
+        
+    	//碰到边界反弹判断
+    	if(dot.xp>=0){        //X轴方向判断
+              if(dot.dotX>=c.width){
+              	dot.xp=-dot.xp;
+              }
+        	}
+        	else{
+        		if(dot.dotX<=0){
+        			dot.xp=-dot.xp;
+        		}
+    	}
+
+        if(dot.yp>=0){       //Y轴方向上判断
+            	if(dot.dotY>=c.height){
+            		dot.yp=-dot.yp;
+            	}
+        }
+        else{
+        		if(dot.dotY<=0){
+        		    dot.yp=-dot.yp;
+        		}
+        }
+        }
+        drawL();
+        //定时器
+        setTimeout(dotM,10);
+     }
+     dotM();
+
+        //满足距离的两点画直线
+	        function drawL(){
+		        for(var n=0;n<dotN;n++){
+		        	for(var j=n;j<dotN;j++){
+		                if(Math.abs(dots[n].dotX-dots[j].dotX)<50&&Math.abs(dots[n].dotY-dots[j].dotY)<50){
+		                	ctx.beginPath();
+		                	ctx.moveTo(dots[n].dotX,dots[n].dotY);
+		                	ctx.lineTo(dots[j].dotX,dots[j].dotY);
+		                	ctx.strokeStyle="rgba(0,0,0,0.2)";           //设置连线的透明度
+		                	ctx.stroke();
+		                }
+		                if(Math.abs(dots[n].dotX-dots[j].dotX)<35&&Math.abs(dots[n].dotY-dots[j].dotY)<35){
+		                	ctx.beginPath();
+		                	ctx.moveTo(dots[n].dotX,dots[n].dotY);
+		                	ctx.lineTo(dots[j].dotX,dots[j].dotY);
+		                	ctx.strokeStyle="rgba(0,0,0,0.3)";
+		                	ctx.stroke();
+		                }
+		                if(Math.abs(dots[n].dotX-dots[j].dotX)<10&&Math.abs(dots[n].dotY-dots[j].dotY)<10){
+		                	ctx.beginPath();
+		                	ctx.moveTo(dots[n].dotX,dots[n].dotY);
+		                	ctx.lineTo(dots[j].dotX,dots[j].dotY);
+		                	ctx.strokeStyle="rgba(0,0,0,0.4)";
+		                	ctx.stroke();
+		                }
+		        	}
+		        }
+		        if(c_flag==1){           //鼠标进入canvas事执行
+		        	for(var m=0;m<dotN;m++){
+			        	var MW=Math.abs(dots[m].dotX-Mx);
+			        	var MH=Math.abs(dots[m].dotY-My);
+			        	if(MW<=100&&MH<=100){
+	                        ctx.beginPath();
+		                	ctx.moveTo(dots[m].dotX,dots[m].dotY);
+		                	ctx.lineTo(Mx,My);
+		                	ctx.strokeStyle="rgba(0,0,0,0.2)";
+		                	ctx.stroke();
+			        	}
+			        	if(MW<=60&&MH<=60){
+			        		ctx.beginPath();
+		                	ctx.moveTo(dots[m].dotX,dots[m].dotY);
+		                	ctx.lineTo(Mx,My);
+		                	ctx.strokeStyle="rgba(0,0,0,0.3)";
+		                	ctx.stroke();
+			        	}
+			        	if(MW<=30&&MH<=30){
+			        		ctx.beginPath();
+		                	ctx.moveTo(dots[m].dotX,dots[m].dotY);
+		                	ctx.lineTo(Mx,My);
+		                	ctx.strokeStyle="rgba(0,0,0,0.4)";
+		                	ctx.stroke();
+			        	}
+			        	if(MW*MW+MH*MH<=22500&&MW*MW+MH*MH>10000){//判断鼠标点和粒子点的距离，用平方来计算，这样可以汇聚成一个圆
+			        		 dots[m].dotX=dots[m].dotX-(dots[m].dotX-Mx)*0.02; //满足条件时(100-150这段距离)，粒子快速移动
+	                         dots[m].dotY=dots[m].dotY-(dots[m].dotY-My)*0.02;
+	                         
+			        	}
+		            } 
+		        }
+	        } 
+        //鼠标滑过事件
+           function mouseE(e){
+		           var e=e||window.event;
+			       Mx=e.clientX;
+			       My=e.clientY;
+			       ctx.fillStyle="black";
+			       ctx.fillRect(Mx,My,2,2);
+			       dots.push(Mx,My);  //粒子数组中添加两个元素，即鼠标的坐标
+			       c_flag=1;
+           }
+          c.addEventListener('mousemove',mouseE,false); //canvas添加鼠标移动事件
+          c.addEventListener('mouseout',function(){c_flag=0;},false)  //canvas添加鼠标移出事件
+	</script>
 </body>
 </html>
