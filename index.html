@@ -3,14 +3,32 @@
   <head>
     <title>个人博客</title>
     <style>
+    *{
+    	padding:0;
+    	margin:0;
+    }
+    html{
+    	overflow: hidden;
+    }
     body{
       /*background:url(images/404.jpg) no-repeat;*/
       height:100%;
     }
+    .main{
+    	position: absolute;
+    	margin:20px 30px;
+    	top:80px;
+    }
+    .main a{
+    	padding:10px 0;
+    }
       h1{
-        font-size:20px;
+        font-size:30px;
         text-align:center;
         color:red;
+        padding:20px 0;
+        position: absolute;
+        width: 100%;
       }
       a{
         font-size:20px;
@@ -29,27 +47,30 @@
     </style>
   </head>
 <body>
-  <canvas id="myCanvas" style="background:#f0ffff;position:absolute;"></canvas>
+  <canvas id="myCanvas" style="background:#ffffff;position:absolute;"></canvas>
   <h1>github博客建设中，请移步至本人chinaUnix博客</h1>
-  <a href="https://github.com/zhaoyongwei/zhaoyongwei.github.io">1、个人GitHub</a><span>--2015/12/18</span>
-  <br/>
-  <a href="http://blog.chinaunix.net/uid/30500252/abstract/1.html">2、个人chinaUnix博客</a><span>--2015/9/23</span>
-  <br/>
-  <a href="http://zhaoyongwei.github.io/demo1/">3、PC端固定布局--旅游网站</a><span>--2016/1/15</span>
-  <br/>
-  <a href="http://zhaoyongwei.github.io/demo2/">4、响应式布局--美食网站首页</a><span>--2016/3/15</span>
-  <br/>
-  <a href="http://zhaoyongwei.github.io/resume/" style="color:red;">5、个人简历</a><span>--2016/3/2</span>
-  <br/>
-  <a href="http://zhaoyongwei.github.io/bootstrap/">6、响应式布局--基于bootstrap框架实现的页面</a><span>--2016/3/22</span>
-  <br/>
-  <a href="http://zhaoyongwei.github.io/bootstrap/">7、响应式布局--基于bootstrap框架实现的页面（未上传)</a><span>--2016/4/2</span>
+  <div class="main">
+  	
+	  <a href="https://github.com/zhaoyongwei/zhaoyongwei.github.io">1、个人GitHub</a><span>--2015/12/18</span>
+	  <br/>
+	  <a href="http://blog.chinaunix.net/uid/30500252/abstract/1.html">2、个人chinaUnix博客</a><span>--2015/9/23</span>
+	  <br/>
+	  <a href="http://zhaoyongwei.github.io/demo1/">3、PC端固定布局--旅游网站</a><span>--2016/1/15</span>
+	  <br/>
+	  <a href="http://zhaoyongwei.github.io/demo2/">4、响应式布局--美食网站首页</a><span>--2016/3/15</span>
+	  <br/>
+	  <a href="http://zhaoyongwei.github.io/resume/" style="color:red;">5、个人简历</a><span>--2016/3/2</span>
+	  <br/>
+	  <a href="http://zhaoyongwei.github.io/bootstrap/">6、响应式布局--基于bootstrap框架实现的页面</a><span>--2016/3/22</span>
+	  <br/>
+	  <a href="http://zhaoyongwei.github.io/bootstrap/">7、响应式布局--基于bootstrap框架实现的页面（未上传)</a><span>--2016/4/2</span>
+  </div>
 <script>
      var c=document.getElementById('myCanvas');
      var ctx=c.getContext('2d');
      var dots=[];   //粒子数组
      var c_flag=0;   //判断鼠标进入和移出
-     var dotN=300; //页面粒子个数
+     var dotN=400; //页面粒子个数
      var Mx,My;   //鼠标坐标
      c.width=document.body.clientWidth||window.innerWidth || document.documentElement.clientWidth;  //兼容浏览器
      c.height=document.body.clientHeight||window.innerHeight || document.documentElement.clientHeight;
@@ -110,21 +131,21 @@
 		                	ctx.beginPath();
 		                	ctx.moveTo(dots[n].dotX,dots[n].dotY);
 		                	ctx.lineTo(dots[j].dotX,dots[j].dotY);
-		                	ctx.strokeStyle="rgba(0,0,0,0.2)";           //设置连线的透明度
+		                	ctx.strokeStyle="rgba(200,0,0,0.2)";           //设置连线的透明度
 		                	ctx.stroke();
 		                }
 		                if(Math.abs(dots[n].dotX-dots[j].dotX)<35&&Math.abs(dots[n].dotY-dots[j].dotY)<35){
 		                	ctx.beginPath();
 		                	ctx.moveTo(dots[n].dotX,dots[n].dotY);
 		                	ctx.lineTo(dots[j].dotX,dots[j].dotY);
-		                	ctx.strokeStyle="rgba(0,0,0,0.3)";
+		                	ctx.strokeStyle="rgba(0,200,0,0.3)";
 		                	ctx.stroke();
 		                }
 		                if(Math.abs(dots[n].dotX-dots[j].dotX)<10&&Math.abs(dots[n].dotY-dots[j].dotY)<10){
 		                	ctx.beginPath();
 		                	ctx.moveTo(dots[n].dotX,dots[n].dotY);
 		                	ctx.lineTo(dots[j].dotX,dots[j].dotY);
-		                	ctx.strokeStyle="rgba(0,0,0,0.4)";
+		                	ctx.strokeStyle="rgba(0,0,200,0.4)";
 		                	ctx.stroke();
 		                }
 		        	}
