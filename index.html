@@ -71,7 +71,7 @@
      var ctx=c.getContext('2d');
      var dots=[];   //粒子数组
      var c_flag=0;   //判断鼠标进入和移出
-     var dotN=400; //页面粒子个数
+     var dotN; //页面粒子个数
      var Mx,My;   //鼠标坐标
      c.width=document.body.clientWidth||window.innerWidth || document.documentElement.clientWidth;  //兼容浏览器
      c.height=document.body.clientHeight||window.innerHeight || document.documentElement.clientHeight;
@@ -79,6 +79,12 @@
      	c.width=document.body.clientWidth||window.innerWidth || document.documentElement.clientWidth;
         c.height=document.body.clientHeight||window.innerHeight || document.documentElement.clientHeight;
      }   //适应缩放窗口事件
+     if(c.width<640){   //移动端浏览时
+     	dotN=100;
+     }
+     else{
+     	dotN=400;
+     }
      ctx.fillStyle="black";
      for(var i=0;i<dotN;i++){            //生成粒子数组
      	var dotX=Math.random()*c.width;
