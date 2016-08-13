@@ -228,10 +228,10 @@
          this.style.display="none";
          document.getElementById('pause').style.display="block";
          timer=setInterval(snackM,speed);
-         document.getElementById('top').setAttribute('disabled',false);
-         document.getElementById('left').setAttribute('disabled',false);
-         document.getElementById('right').setAttribute('disabled',false);
-         document.getElementById('bottom').setAttribute('disabled',false);
+         document.getElementById('top').removeAttribute('disabled',false);
+         document.getElementById('left').removeAttribute('disabled',false);
+         document.getElementById('right').removeAttribute('disabled',false);
+         document.getElementById('bottom').removeAttribute('disabled',false);
 
       }
       document.getElementById('pause').onclick=function(){
