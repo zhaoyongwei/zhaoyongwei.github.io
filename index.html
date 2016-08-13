@@ -7,7 +7,6 @@
     <title>个人博客</title>
     <script type="text/javascript" src="demo1/jquery.js"></script>
     <script type="text/javascript" src="swfobject.js"></script>
-    <link href="demo1/style.css" rel="stylesheet">
     <style>
     *{
     	padding:0;
@@ -50,6 +49,77 @@
         color:#ccc;
         padding:10px 0;
       }
+	table,tr,td {
+		font-size: 10pt;
+		border-color : #777777;
+		background : #dddddd; 
+		color: #000000; 
+		border-style : solid;
+		border-width : 2px;
+		padding: 5px;
+		border-collapse:collapse;
+	}
+	.warning { 
+		font-weight: bold;
+	} 
+	/* fix for scroll bars on webkit & Mac OS X Lion */ 
+	::-webkit-scrollbar {
+		background-color: rgba(0,0,0,0.5);
+		width: 0.75em;
+	}
+	::-webkit-scrollbar-thumb {
+    	background-color:  rgba(255,255,255,0.5);
+	}
+
+	#container,.info{
+		width: 640px;
+		height: 480px;
+	    position: absolute;
+	    left:700px;
+	    top:50px;
+	    visibility: hidden;
+	}
+	.contain-btn{
+		position: absolute;
+		width: 200px;
+		left:920px;
+		display: block;
+z-index: 1001;
+height: 30px;
+font-size: 20px;
+text-align: center;
+top:10px;
+color: red;
+	}
+	.info{
+		z-index: 1000;
+		display: none;
+		font-size: 20px;
+	}
+	.info .info-main{
+		position: absolute;
+		width: 400px;
+		height: 300px;
+		background: white;
+		left: 120px;
+		top:90px;
+		line-height: 300px;
+		text-align: center;
+		border-radius: 20px;
+	}
+	.info .close{
+		position: absolute;
+		left: 505px;
+		top:73px;
+		background: white;
+		border-radius: 15px;
+		width: 30px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		font-size: 20px;
+		display: inline-block;
+	}
     </style>
   </head>
 <body>
