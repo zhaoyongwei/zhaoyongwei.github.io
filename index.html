@@ -100,10 +100,9 @@
 		position: absolute;
 		width: 400px;
 		height: 300px;
-		background: white;
+		background:#ccc;
 		left: 120px;
 		top:90px;
-		line-height: 300px;
 		text-align: center;
 		border-radius: 20px;
 	}
@@ -119,6 +118,15 @@
 		text-align: center;
 		font-size: 20px;
 		display: inline-block;
+		cursor:pointer;
+	}
+	.info-main p{
+	        height: 30px;
+	        font-size: 16px;
+	        text-align: left;
+	        margin:20px 0 0 0;
+	        padding:0;
+	        text-indent: 10px;
 	}
     </style>
   </head>
@@ -288,19 +296,31 @@
 <button class="contain-btn">点击追寻时间的脚步</button>
 <div class="info part1">
 <div class="info-main">
-HTM5 360°全景图！			
+	<p>•　就职于南北巢网络科技有限公司</p>
+	<p>•　担任初级web开发工程师</p>			
+	<p>•　精通DIV+CSS+JAVASCRIPT</p>
+	<p>•　熟悉各浏览器兼容性</p>
+	<p>•　工作之余学习了PHP和Bootstrap</p>				
 </div>
 <span class="close" style="padding:0;">✘</span>
 </div>
 <div class="info part2">
 <div class="info-main">
-第一个DEMO！				
+	<p>•　配合后台,实现PC端和移动端交互页面</p>
+	<p>•　负责公司两个网站的前端样式</p>			
+	<p>•　熟悉Node.js,PHP,Mysql</p>
+	<p>•　独自完成了若干项目,现已上线</p>
+	<p>•　熟练使用Jquery,Bootstrap,Angular.js等框架</p>					
 </div>
 <span class="close" style="padding:0;">✘</span>
 </div>
 <div class="info part3">
 <div class="info-main">
-three.js				
+	<p>•　就职于上海增联物流有限公司</p>
+	<p>•　担任IT运维一职</p>			
+	<p>•　负责公司网络稳定,机房服务器配置</p>
+	<p>•　工作期间接触到了web前端,并沉迷于前端</p>	
+	<p>•　自学HTML+CSS+JAVASCRIPT</p>				
 </div>
 <span class="close" style="padding:0;">✘</span>
 </div>		
@@ -369,7 +389,7 @@ $(".part3 .close").on('touchstart click',function(){
    $(".part3").hide();
 })
 //隐藏信息提示框
-$(".div8,.div4,.div6").hide();
+// $(".div8,.div4,.div6").hide();
 
 //按钮显示和隐藏全景图
 var m=0;
