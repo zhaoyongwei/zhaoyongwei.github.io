@@ -228,12 +228,20 @@
          this.style.display="none";
          document.getElementById('pause').style.display="block";
          timer=setInterval(snackM,speed);
+         document.getElementById('top').setAttribute('disabled',false);
+         document.getElementById('left').setAttribute('disabled',false);
+         document.getElementById('right').setAttribute('disabled',false);
+         document.getElementById('bottom').setAttribute('disabled',false);
 
       }
       document.getElementById('pause').onclick=function(){
         this.style.display="none";
         document.getElementById('begin').style.display="block";
         clearInterval(timer);
+	 document.getElementById('top').setAttribute('disabled',true);
+	 document.getElementById('left').setAttribute('disabled',true);
+	 document.getElementById('right').setAttribute('disabled',true);
+	 document.getElementById('bottom').setAttribute('disabled',true);
       }
       document.getElementById('restart').onclick=function(){
         window.history.go(0);  //返回上一个网页
